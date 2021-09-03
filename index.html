@@ -20,9 +20,9 @@
     <div class="container" style="height:150">
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-                <a class="navbar-item" href="http://www.goldsgym.com">
-                    <img src="workout.png" width="112" height="100">
-                </a>
+                
+                    <img class="weightman" src="workout.png" width="112" height="100">
+               
 
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
                     data-target="navbarBasicExample">
@@ -177,7 +177,7 @@
                 <th>Excercise</th>
                 <th>Equipment</th>
                 <th>Difficulty</th>
-        
+
             </tr>
             <tr style="border-style:double">
                 <td>Situps</td>
@@ -191,20 +191,39 @@
                 <td>Medium</td>
             </tr>
             <br>
-        
+
         </table>
 
 
 
-
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
         <script>var dropdown = document.querySelector('#drop1');
-            dropdown.addEventListener('click', function(event) {
-              event.stopPropagation();
-              dropdown.classList.toggle('is-active');
+            dropdown.addEventListener('click', function (event) {
+                event.stopPropagation();
+                dropdown.classList.toggle('is-active');
             });</script>
-        
-        
+
+        <script>
+
+
+            let size = 72;
+
+            $(".weightman").click(function () {
+
+                size += 10;
+
+                $(".weightman").css({ width: size })
+
+
+            })
+        </script>
+
+
+
+
+
 
 </body>
+
 
 </html>
