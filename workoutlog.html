@@ -8,14 +8,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
         integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <title>Excercise Application Homepage</title>
+    <title>Workout Log</title>
 </head>
 
 <body>
-
-
-
-
 
 
     <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -36,7 +32,7 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item">
+                <a class="navbar-item" href="index.html">
                     Home
                 </a>
 
@@ -54,12 +50,12 @@
                         <a class="navbar-item" href="about.html">
                             About
                         </a>
-                      
+
                         <a class="navbar-item" href="contact.html">
                             Contact
                         </a>
                         <hr class="navbar-divider">
-                     
+
                     </div>
 
 
@@ -155,49 +151,32 @@
         </div>
     </nav>
 
-    <h1 style="background-color: rosybrown;"> Our Wonderful Website</h1>
 
 
-    <ul class="list">
-        <li>Bulma</li>
-        <li>Bulma</li>
-        <li>Bulma</li>
-        <li>Bulma</li>
-        <li>Bulma</li>
-    </ul>
+    <table style="width:50%; border-style: groove">
 
+        <tr style="text-decoration: underline; border-style:groove">
+            <th>Excercise</th>
+            <th>Equipment</th>
+            <th>Difficulty</th>
 
+        </tr>
+        <tr style="border-style:double">
+            <td>Situps</td>
+            <td>None</td>
+            <td>Easy</td>
+        </tr>
+        <br>
+        <tr style="border-style:double">
+            <td>Russian Twists</td>
+            <td>None</td>
+            <td>Medium</td>
+        </tr>
+        <br>
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script>var dropdown = document.querySelector('#drop1');
-        dropdown.addEventListener('click', function (event) {
-            event.stopPropagation();
-            dropdown.classList.toggle('is-active');
-        });</script>
-
-    <script>
-
-
-        let size = 72;
-
-        $(".weightman").click(function () {
-
-            size += 10;
-
-            $(".weightman").css({ width: size })
-
-
-        })
-    </script>
-
-
-
-
+    </table>
 
 
 </body>
-
 
 </html>
