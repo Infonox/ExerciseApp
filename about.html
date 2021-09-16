@@ -13,59 +13,107 @@
 
 <body>
 
-
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-
-            <img class="weightman" src="workout.png" width="112" height="100">
+    <div class="container">
 
 
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+
+                <img class="weightman" src="workout.png" width="112" height="100" :style="` width: ${sizeCounter}px `"
+                    @click="weightmanGrow">
 
 
-
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item" href="index.html">
-                    Home
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample" :class="{ 'is-active': navBarIsActive}"
+                    @click="navBarIsActive = !navBarIsActive">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
                 </a>
+            </div>
 
-                <a class="navbar-item" href="workoutlog.html">
-                    Workout Log
-                </a>
 
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        More
+
+            <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active': navBarIsActive}"
+                @click="navBarIsActive = !navBarIsActive">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="index.html">
+                        Home
+                    </a>
+
+                    <a class="navbar-item" href="workoutlog.html">
+                        Workout Log
+                    </a>
+                    <a class="navbar-item" href="profile.html">
+                        Profile
+                    </a>
+                    <a class="navbar-item" href="sharing.html">
+                        Sharing
                     </a>
 
 
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item" href="about.html">
-                            About
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            More
                         </a>
 
-                        <a class="navbar-item" href=contact.html>
-                            Contact
-                        </a>
-                        <hr class="navbar-divider">
+
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item" href="about.html">
+                                About
+                            </a>
+
+                            <a class="navbar-item" href=contact.html>
+                                Contact
+                            </a>
+                            <hr class="navbar-divider">
+
+                        </div>
+
 
                     </div>
+
+                    <div class="dropdown is-hoverable" style="align-items: center">
+                        <div class="dropdown-trigger">
+                            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                <span style="background-color:rosybrown">No JS Dropdown Button</span>
+                                <!---uses the class="dropdown" and "is-hoverable" attributes, no javascript-->
+                                <span class="icon is-small">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                            <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">
+                                    Dropdown item
+                                </a>
+                                <a class="dropdown-item">
+                                    A dropdown item!
+                                </a>
+                                <a href="#" class="dropdown-item is-active">
+                                    An ACTIVER dropdown Item!
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    Other dropdown item
+                                </a>
+                                <hr class="dropdown-divider">
+                                <a href="#" class="dropdown-item">
+                                    Dropdown item with a divider!!
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
 
 
                 </div>
 
-                <div class="dropdown is-hoverable" style="align-items: center">
+                <div class="dropdown" id="drop1" style="align-items:center">
                     <div class="dropdown-trigger">
                         <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                            <span style="background-color:rosybrown">No JS Dropdown Button</span>
-                            <!---uses the class="dropdown" and "is-hoverable" attributes, no javascript-->
+                            <span style="background-color: silver">JS Dropdown Button</span>
+                            <!---THIS DROPDOWN BUTTON USES JAVASCRIPT, the id=drop1, the javascript is what causes the button to show the list on click!-->
                             <span class="icon is-small">
                                 <i class="fas fa-angle-down" aria-hidden="true"></i>
                             </span>
@@ -74,13 +122,13 @@
                     <div class="dropdown-menu" id="dropdown-menu" role="menu">
                         <div class="dropdown-content">
                             <a href="#" class="dropdown-item">
-                                Dropdown item
+                                Drop1 Item 1
                             </a>
                             <a class="dropdown-item">
-                                A dropdown item!
+                                Drop1 item2
                             </a>
                             <a href="#" class="dropdown-item is-active">
-                                An ACTIVER dropdown Item!
+                                Drop1 Item3(Active)
                             </a>
                             <a href="#" class="dropdown-item">
                                 Other dropdown item
@@ -95,83 +143,54 @@
 
 
 
-            </div>
 
-            <div class="dropdown" id="drop1" style="align-items:center">
-                <div class="dropdown-trigger">
-                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                        <span style="background-color: silver">JS Dropdown Button</span>
-                        <!---THIS DROPDOWN BUTTON USES JAVASCRIPT, the id=drop1, the javascript is what causes the button to show the list on click!-->
-                        <span class="icon is-small">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                    </button>
-                </div>
-                <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                    <div class="dropdown-content">
-                        <a href="#" class="dropdown-item">
-                            Drop1 Item 1
-                        </a>
-                        <a class="dropdown-item">
-                            Drop1 item2
-                        </a>
-                        <a href="#" class="dropdown-item is-active">
-                            Drop1 Item3(Active)
-                        </a>
-                        <a href="#" class="dropdown-item">
-                            Other dropdown item
-                        </a>
-                        <hr class="dropdown-divider">
-                        <a href="#" class="dropdown-item">
-                            Dropdown item with a divider!!
-                        </a>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+
+
+
+                        <div class="buttons">
+                            <a class="button is-primary" style="background-color:grey">
+                                <strong></strong>Sign up</strong>
+                            </a>
+                            <a class="button is-light">
+                                Log in
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
+        </nav>
 
 
-
-
-
-            <div class="navbar-end">
-                <div class="navbar-item">
-
-
-
-                    <div class="buttons">
-                        <a class="button is-primary" style="background-color:grey">
-                            <strong></strong>Sign up</strong>
-                        </a>
-                        <a class="button is-light">
-                            Log in
-                        </a>
-                    </div>
+        <div class="box" style="height:200px">
+            <article class="media">
+                <div class="media-left">
+                    <figure class="image is-96x96">
+                        <img src="HenryMPicture.png" alt="Image">
+                    </figure>
                 </div>
-            </div>
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <strong>Henry A. Maldonado</strong> <small>New Paltz Computer Science Major</small>
+                            <br>
+                            Hello and welcome to the Web Application, I'm a 4th year Computer Science Major from
+                            Middletown,
+                            NY. Hope you enjoy the website!
+                        </p>
+                    </div>
+
+                </div>
+            </article>
         </div>
-    </nav>
 
-
-    <div class="box" style="height:200px">
-        <article class="media">
-            <div class="media-left">
-                <figure class="image is-96x96">
-                    <img src="HenryMPicture.png" alt="Image">
-                </figure>
-            </div>
-            <div class="media-content">
-                <div class="content">
-                    <p>
-                        <strong>Henry A. Maldonado</strong> <small>New Paltz Computer Science Major</small>
-                        <br>
-                        Hello and welcome to the Web Application, I'm a 4th year Computer Science Major from Middletown,
-                        NY. Hope you enjoy the website!
-                    </p>
-                </div>
-
-            </div>
-        </article>
     </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src=myScript.js></script>
+
 
 
 
