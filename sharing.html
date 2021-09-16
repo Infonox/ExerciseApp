@@ -8,14 +8,63 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
         integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <title>About page</title>
+    <title>Sharing Page</title>
+
+    <style>
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
 </head>
 
 <body>
 
+
+
+
+
     <div class="container">
 
-
+        {{title}}
+        <!---where our vue app is binded to-->
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
 
@@ -35,8 +84,8 @@
 
 
             <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active': navBarIsActive}"
-            @click="navBarIsActive = !navBarIsActive">
-                <div class="navbar-start" >
+                @click="navBarIsActive = !navBarIsActive">
+                <div class="navbar-start">
                     <a class="navbar-item" href="index.html">
                         Home
                     </a>
@@ -44,12 +93,14 @@
                     <a class="navbar-item" href="workoutlog.html">
                         Workout Log
                     </a>
+
                     <a class="navbar-item" href="profile.html">
                         Profile
                     </a>
                     <a class="navbar-item" href="sharing.html">
                         Sharing
                     </a>
+
 
 
                     <div class="navbar-item has-dropdown is-hoverable">
@@ -63,7 +114,7 @@
                                 About
                             </a>
 
-                            <a class="navbar-item" href=contact.html>
+                            <a class="navbar-item" href="contact.html">
                                 Contact
                             </a>
                             <hr class="navbar-divider">
@@ -163,36 +214,88 @@
             </div>
         </nav>
 
+        <h1 style="background-color: rosybrown;"> Our Wonderful Website</h1>
 
-        <div class="box" style="height:200px">
-            <article class="media">
-                <div class="media-left">
-                    <figure class="image is-96x96">
-                        <img src="HenryMPicture.png" alt="Image">
-                    </figure>
-                </div>
-                <div class="media-content">
-                    <div class="content">
-                        <p>
-                            <strong>Henry A. Maldonado</strong> <small>New Paltz Computer Science Major</small>
-                            <br>
-                            Hello and welcome to the Web Application, I'm a 4th year Computer Science Major from
-                            Middletown,
-                            NY. Hope you enjoy the website!
-                        </p>
-                    </div>
 
-                </div>
-            </article>
+
+
+
+        {{test}}
+
+        <p>{{ title }}</p>
+       
+        <hr>
+        this is the USER SHARING PAGE!
+
+        <hr>
+        <div class="dropdown">
+            <button class="dropbtn">Dropdown</button>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
         </div>
 
+
+
+
+
     </div>
+
 
     <script src="https://unpkg.com/vue@next"></script>
     <script src=MyScript.js></script>
 
 
 
+
+    <!----BELOW IS PRACTICE JQUERY CODE, UNUSED FOR NOW--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script>var dropdown = document.querySelector('#drop1');
+        dropdown.addEventListener('click', function (event) {
+            event.stopPropagation();
+            dropdown.classList.toggle('is-active');
+        });</script>
+
+    <script>
+
+
+        let size = 72;
+
+        $(".weightman").click(function () {
+
+            size += 10;
+
+            $(".weightman").css({ width: size })
+
+
+        })
+    </script>
+    ---------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
+
 
 </html>
