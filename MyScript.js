@@ -30,6 +30,7 @@
                 
 
 
-        Vue.createApp(VM).mount('.container')
+        
+        Vue.createApp(VM).mount('.app')
 
 
