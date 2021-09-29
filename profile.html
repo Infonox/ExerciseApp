@@ -6,26 +6,131 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Roboto+Condensed:wght@300&display=swap">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Roboto+Condensed:wght@300&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c7451615db.js" crossorigin="anonymous"></script>
     <title>Excercise Application Homepage</title>
+
+    <style>
+        .title {
+            font-family: 'Playfair Display SC', serif;
+
+
+        }
+
+        .subtitle {
+            font-family: 'Roboto Condensed', sans-serif;
+
+        }
+
+        .label {
+            font-family: 'Amatic SC', cursive;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .hero-body {
+            border-style: double;
+            border-color: lightgrey;
+            border-width: 20px;
+
+
+        }
+
+        .column {
+
+
+            font-size: 20px;
+            font-family: 'Amatic SC', cursive;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-family: 'Shadows Into Light', cursive;
+            color: black;
+
+        }
+
+        .navbar .navbar-menu {
+            text-align: center;
+            font-family: 'Amatic SC', cursive;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: bold;
+
+
+
+
+
+
+
+        }
+
+
+
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+
+        #navbarSection {
+            border-style: double;
+            border-color: white;
+            border-width: 10px;
+
+
+        }
+    </style>
 </head>
 
 <body>
 
+    <section class=" has-background-grey-light app" id="navbarSection">
 
 
-
-
-    <div class="container">
-
-        {{title}}
-        <!---where our vue app is binded to-->
-        <nav class="navbar" role="navigation" aria-label="main navigation">
+        <nav class="navbar has-background-grey-light" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
 
-                <img class="weightman" src="workout.png" width="112" height="100"
-                    :style="` width: ${sizeCounter}px `"  @click="weightmanGrow">
+                <img class="weightman" src="workout.png" width="112" height="100" :style="` width: ${sizeCounter}px `"
+                    @click="weightmanGrow">
 
 
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
@@ -59,6 +164,8 @@
 
 
 
+
+
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
                             More
@@ -80,112 +187,163 @@
 
                     </div>
 
-                    <div class="dropdown is-hoverable" style="align-items: center">
-                        <div class="dropdown-trigger">
-                            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                                <span style="background-color:rosybrown">No JS Dropdown Button</span>
-                                <!---uses the class="dropdown" and "is-hoverable" attributes, no javascript-->
-                                <span class="icon is-small">
-                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                </span>
-                            </button>
-                        </div>
-                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                            <div class="dropdown-content">
-                                <a href="#" class="dropdown-item">
-                                    Dropdown item
-                                </a>
-                                <a class="dropdown-item">
-                                    A dropdown item!
-                                </a>
-                                <a href="#" class="dropdown-item is-active">
-                                    An ACTIVER dropdown Item!
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    Other dropdown item
-                                </a>
-                                <hr class="dropdown-divider">
-                                <a href="#" class="dropdown-item">
-                                    Dropdown item with a divider!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
 
+
+                    <div class="navbar-end">
+
+                    </div>
 
 
                 </div>
 
-                <div class="dropdown" id="drop1" style="align-items:center">
-                    <div class="dropdown-trigger">
-                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                            <span style="background-color: silver">JS Dropdown Button</span>
-                            <!---THIS DROPDOWN BUTTON USES JAVASCRIPT, the id=drop1, the javascript is what causes the button to show the list on click!-->
-                            <span class="icon is-small">
-                                <i class="fas fa-angle-down" aria-hidden="true"></i>
-                            </span>
-                        </button>
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                        <div class="dropdown-content">
-                            <a href="#" class="dropdown-item">
-                                Drop1 Item 1
-                            </a>
-                            <a class="dropdown-item">
-                                Drop1 item2
-                            </a>
-                            <a href="#" class="dropdown-item is-active">
-                                Drop1 Item3(Active)
-                            </a>
-                            <a href="#" class="dropdown-item">
-                                Other dropdown item
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                Dropdown item with a divider!!
-                            </a>
-                        </div>
-                    </div>
-                </div>
+
+            </div>
+            <div class="buttons">
+                <a class="button is-primary" style="background-color:grey">
+                    <strong></strong>Sign up</strong>
+                </a>
+                <a class="button is-light">
+                    Log in
+                </a>
+            </div>
 
 
 
 
 
-                <div class="navbar-end">
-                    <div class="navbar-item">
+
+
+        </nav>
+    </section>
 
 
 
-                        <div class="buttons">
-                            <a class="button is-primary" style="background-color:grey">
-                                <strong></strong>Sign up</strong>
-                            </a>
-                            <a class="button is-light">
-                                Log in
-                            </a>
-                        </div>
-                    </div>
+
+    <section>
+        <div class="card">
+            <div class="card-content">
+
+                <div class="media-content">
+                    <p class="title is-4"style="size:100px">Henry A. Maldonado</p>
+                    <p class="subtitle is-6">@HenryMaldonado</p>
                 </div>
             </div>
-        </nav>
 
-        <h1 style="background-color: rosybrown;"> Our Wonderful Website</h1>
+            <div class="title is-active">
+               User Profile
+               
+             
+       
+                
+            </div>
+            <div class="card-footer" style="align-items: center;">
+                <i class="fas fa-heart card-footer-item fa-2x" ></i>
+                <i class="fas fa-swimmer card-footer-item fa-2x"></i>
+                <i class="fas fa-running card-footer-item fa-2x"></i>
 
-        {{test}}
 
-        <p>{{ title }}</p>
-      THIS IS THE PROFILE PAGE!!!!!!
+            </div>
+        </div>
+        </div>
+    </section>
+    <br>
+
+
+    <div class="section">
+        <div class="container">
+            <div class="columns is-mobile">
+                <div class="column notification is-success has-text-black">
+                    <container>
+
+                        <span style="font-size:80px;">User Image:</span>
+                        <br>
+                        <br>
+
+
+
+                        <img class="is-rounded" src="HenryMPicture.png">
+
+                    </container>
+
+
+
+                </div>
+                <div class="column notification is-danger has-text-black">
+                    <span style="font-size:80px;">Age:</span>
+                    <br>
+                    <span style="font-size:45px">25</span>
+
+                </div>
+                <div class="column notification is-primary has-text-black">
+                    <span style="font-size:80px;">Weight:</span>
+                    <br>
+                    <span style="font-size:45px">150lbs</span>
+                </div>
+                <div class="column notification is-warning has-text-black">
+                    <span style="font-size:80px;">Description</span>
+                    <br>
+                    Nam dapibus venenatis leo vel mattis. Maecenas pretium quam et commodo eleifend. Suspendisse
+                    tincidunt orci in gravida vestibulum. Donec sollicitudin vitae lacus sed viverra. Lorem ipsum dolor
+                    sit amet, consectetur adipiscing elit. Sed eu augue augue. Donec imperdiet enim vel urna lobortis
+                    euismod. Donec ut quam eget diam blandit sodales. Phasellus finibus tortor nec enim sagittis, ut
+                    dictum ex interdum. Fus. Nulla commodo et justo sit ame
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="hero is-info">
+        <div class="hero-body">
+            <p class="title ">
+            Last Workout Complete:
+             
+            </p>
+
+            <p class="subtitle">
+                Last workout can appear inside this p tag
+            </p>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-------------------
+    {{test}}
+
+    THIS IS THE HOME PAGE!
+    ------------------------------>
+
+    </div>
+
+
+
+
+
+
 
 
     </div>
 
 
+
+
     <script src="https://unpkg.com/vue@next"></script>
-    <script src=myScript.js></script>
+    <script src=MyScript.js></script>
 
 
-    
+
 
     <!----BELOW IS PRACTICE JQUERY CODE, UNUSED FOR NOW--
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
@@ -226,7 +384,13 @@
 
 
 
-
+    <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>Excercise Application using Bulma/Node/Javascript</strong> by <a href="www.runescape.com">Henry Maldonado</a>.
+          </p>
+        </div>
+      </footer>
 
 
 

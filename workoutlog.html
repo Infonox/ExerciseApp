@@ -6,16 +6,113 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <title>Workout Log</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Roboto+Condensed:wght@300&display=swap">
+    <script src="https://kit.fontawesome.com/c7451615db.js" crossorigin="anonymous"></script>
+    <title>Excercise Application Homepage</title>
+
+    <style>
+        .title {
+            font-family: 'Playfair Display SC', serif;
+
+
+        }
+
+        .subtitle {
+            font-family: 'Roboto Condensed', sans-serif;
+
+        }
+
+        .label {
+            font-family: 'Amatic SC', cursive;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .hero-body {
+            border-style: double;
+            border-color: lightgrey;
+            border-width: 20px;
+
+
+        }
+
+        .column {
+            border-style: groove;
+            border-color: lightgrey;
+        }
+
+        .navbar .navbar-menu {
+            text-align: center;
+            font-family: 'Amatic SC', cursive;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: bold;
+
+
+
+
+        }
+
+
+
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+
+        #navbarSection {
+            border-style: double;
+            border-color: white;
+            border-width: 10px;
+
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
 
+    <section class=" has-background-grey-light app" id="navbarSection">
 
-        <nav class="navbar" role="navigation" aria-label="main navigation">
+        <nav class="navbar has-background-grey-light" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
 
                 <img class="weightman" src="workout.png" width="112" height="100" :style="` width: ${sizeCounter}px `"
@@ -43,12 +140,17 @@
                     <a class="navbar-item" href="workoutlog.html">
                         Workout Log
                     </a>
+
                     <a class="navbar-item" href="profile.html">
                         Profile
                     </a>
                     <a class="navbar-item" href="sharing.html">
                         Sharing
                     </a>
+
+
+
+
 
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
@@ -71,128 +173,239 @@
 
                     </div>
 
-                    <div class="dropdown is-hoverable" style="align-items: center">
-                        <div class="dropdown-trigger">
-                            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                                <span style="background-color:rosybrown">No JS Dropdown Button</span>
-                                <!---uses the class="dropdown" and "is-hoverable" attributes, no javascript-->
-                                <span class="icon is-small">
-                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                </span>
-                            </button>
-                        </div>
-                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                            <div class="dropdown-content">
-                                <a href="#" class="dropdown-item">
-                                    Dropdown item
-                                </a>
-                                <a class="dropdown-item">
-                                    A dropdown item!
-                                </a>
-                                <a href="#" class="dropdown-item is-active">
-                                    An ACTIVER dropdown Item!
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    Other dropdown item
-                                </a>
-                                <hr class="dropdown-divider">
-                                <a href="#" class="dropdown-item">
-                                    Dropdown item with a divider!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
 
+
+                    <div class="navbar-end">
+
+                    </div>
 
 
                 </div>
 
-                <div class="dropdown" id="drop1" style="align-items:center">
-                    <div class="dropdown-trigger">
-                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                            <span style="background-color: silver">JS Dropdown Button</span>
-                            <!---THIS DROPDOWN BUTTON USES JAVASCRIPT, the id=drop1, the javascript is what causes the button to show the list on click!-->
-                            <span class="icon is-small">
-                                <i class="fas fa-angle-down" aria-hidden="true"></i>
-                            </span>
-                        </button>
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                        <div class="dropdown-content">
-                            <a href="#" class="dropdown-item">
-                                Drop1 Item 1
-                            </a>
-                            <a class="dropdown-item">
-                                Drop1 item2
-                            </a>
-                            <a href="#" class="dropdown-item is-active">
-                                Drop1 Item3(Active)
-                            </a>
-                            <a href="#" class="dropdown-item">
-                                Other dropdown item
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                Dropdown item with a divider!!
-                            </a>
-                        </div>
-                    </div>
-                </div>
 
-
-
-
-
-                <div class="navbar-end">
-                    <div class="navbar-item">
-
-
-
-                        <div class="buttons">
-                            <a class="button is-primary" style="background-color:grey">
-                                <strong></strong>Sign up</strong>
-                            </a>
-                            <a class="button is-light">
-                                Log in
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
+            <div class="buttons">
+                <a class="button is-primary" style="background-color:grey">
+                    <strong></strong>Sign up</strong>
+                </a>
+                <a class="button is-light">
+                    Log in
+                </a>
+            </div>
+
+
+
+
+
+
+
         </nav>
 
 
+        <div class="hero body">
 
-        <table style="width:50%; border-style: groove">
 
-            <tr style="text-decoration: underline; border-style:groove">
-                <th>Excercise</th>
-                <th>Equipment</th>
-                <th>Difficulty</th>
+            <div class="container">
 
-            </tr>
-            <tr style="border-style:double">
-                <td>Situps</td>
-                <td>None</td>
-                <td>Easy</td>
-            </tr>
-            <br>
-            <tr style="border-style:double">
-                <td>Russian Twists</td>
-                <td>None</td>
-                <td>Medium</td>
-            </tr>
-            <br>
+                <!--{{title}}---->
+                <!---where our vue app is binded to-->
 
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <!-------------------
+    {{test}}
+
+    THIS IS THE HOME PAGE!
+    ------------------------------>
+
+    <section class="hero is-danger">
+        <div class="hero-body">
+            <p class="title ">
+                Workout Log
+                <i class="fas fa-clipboard fa-2x"></i>
+            </p>
+
+            <p class="subtitle">
+                Record your Excercise data!
+            </p>
+        </div>
+    </section>
+    <br>
+
+    <div class="container">
+        <section>
+            <form id="Form">
+                <fieldset>
+                    <legend>New Item</legend>
+                    <label for="Time">Time:</label>
+                    <input class="control" type="text" id="Time" name="Time" placeholder="Time spent"
+                        pattern="[0-9]{1,2}" autofocus required>
+                    <label for="Type">Action:</label>
+                    <select class="control"id="Type" name="Type" required>
+                        <option value=""></option>
+                        <option>Run</option>
+                        <option>Swimming</option>
+                        <option>Bike</option>
+                        <option>Drink</option>
+                        <option>Eat</option>
+                        <option>Crossfit</option>
+                        <option>Yoga</option>
+                    </select>
+                    <label for="Date">Date:</label>
+                    <input class="control" type="text" id="Date" name="Date" placeholder="mm/dd/yyyy"
+                        pattern="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d" required>
+                    <button class="button" type="submit" class="add">Add</button>
+                </fieldset>
+            </form>
+        </section>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><abbr title="workoutNumber">Workout Number</abbr></th>
+                    <th><abbr title="workoutName">Workout Name</abbr></th>
+                    <th><abbr title="time">Time Spent</abbr></th>
+                    <th><abbr title="Date:">Date</abbr></th>
+
+
+
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th><abbr title="workoutNumber">Workout Number</abbr></th>
+                    <th><abbr title="workoutName">Workout Name</abbr></th>
+                    <th><abbr title="time">Time Spent</abbr></th>
+                    <th><abbr title="Date:">Date</abbr></th>
+
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <th>1</th>
+                    <td>name</td>
+                    <td>timespent</td>
+                    <td>date</td>
+
+
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <td>name</td>
+                    <td>timespent</td>
+                    <td>date</td>
+
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <td>name</td>
+                    <td>timespent</td>
+                    <td>date</td>
+
+                </tr>
+                <tr class="is-selected">
+                    <th>1</th>
+                    <td>name</td>
+                    <td>timespent</td>
+                    <td>date</td>
+
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <td>name</td>
+                    <td>timespent</td>
+                    <td>date</td>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <td>name</td>
+                    <td>timespent</td>
+                    <td>date</td>
+                </tr>
+                <tr>
+            </tbody>
         </table>
+    </div>
+
+
+
+
+
+
 
 
     </div>
 
+
+
+
     <script src="https://unpkg.com/vue@next"></script>
-    <script src=myScript.js></script>
+    <script src=MyScript.js></script>
+
+
+
+
+    <!----BELOW IS PRACTICE JQUERY CODE, UNUSED FOR NOW--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script>var dropdown = document.querySelector('#drop1');
+        dropdown.addEventListener('click', function (event) {
+            event.stopPropagation();
+            dropdown.classList.toggle('is-active');
+        });</script>
+
+    <script>
+
+
+        let size = 72;
+
+        $(".weightman").click(function () {
+
+            size += 10;
+
+            $(".weightman").css({ width: size })
+
+
+        })
+    </script>
+    ---------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Excercise Application using Bulma/Node/Javascript</strong> by <a href="www.runescape.com">Henry
+                    Maldonado</a>.
+            </p>
+        </div>
+    </footer>
+
+
+
+
+
+
 
 
 </body>
+
 
 </html>
