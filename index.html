@@ -6,19 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Roboto+Condensed:wght@300&display=swap">
+    <script src="https://kit.fontawesome.com/c7451615db.js" crossorigin="anonymous"></script>
     <title>Excercise Application Homepage</title>
 
     <style>
+        .title {
+            font-family: 'Playfair Display SC', serif;
+
+
+        }
+
+        .subtitle {
+            font-family: 'Roboto Condensed', sans-serif;
+
+        }
+
+        .label {
+            font-family: 'Amatic SC', cursive;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .hero-body {
+            border-style: double;
+            border-color: lightgrey;
+            border-width: 20px;
+
+
+        }
+
+        .column {
+            border-style: groove;
+            border-color: lightgrey;
+        }
+
         .navbar .navbar-menu {
             text-align: center;
-            
-           
-            
+            font-family: 'Amatic SC', cursive;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: bold;
+
+
+
+
         }
-      
-      
+
+
 
         .dropbtn {
             background-color: #4CAF50;
@@ -61,13 +98,19 @@
         .dropdown:hover .dropbtn {
             background-color: #3e8e41;
         }
+
+        #navbarSection {
+            border-style: double;
+            border-color: white;
+            border-width: 10px;
+
+        }
     </style>
 </head>
 
 <body>
 
-    <section class=" has-background-grey-light app">
-
+    <section class=" has-background-grey-light app" id="navbarSection">
 
         <nav class="navbar has-background-grey-light" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
@@ -133,7 +176,7 @@
 
 
                     <div class="navbar-end">
-                      
+
                     </div>
 
 
@@ -141,14 +184,14 @@
 
 
             </div>
-            <div class="buttons" >
+            <div class="buttons">
                 <a class="button is-primary" style="background-color:grey">
                     <strong></strong>Sign up</strong>
                 </a>
                 <a class="button is-light">
                     Log in
                 </a>
-            </div>Ï
+            </div>
 
 
 
@@ -188,7 +231,9 @@
         <div class="hero-body">
             <p class="title ">
                 Welcome to the Excercise Application!
+                <i class="fas fa-running fa-2x"></i>
             </p>
+
             <p class="subtitle">
                 Create a profile below!
             </p>
@@ -301,7 +346,14 @@
 
 
 
-
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Excercise Application using Bulma/Node/Javascript</strong> by <a href="www.runescape.com">Henry
+                    Maldonado</a>.
+            </p>
+        </div>
+    </footer>
 
 
 
