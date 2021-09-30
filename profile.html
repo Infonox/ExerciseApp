@@ -35,7 +35,7 @@
         }
 
         .hero-body {
-            border-style: double;
+            border-style: ridge;
             border-color: lightgrey;
             border-width: 20px;
 
@@ -116,6 +116,18 @@
             border-color: white;
             border-width: 10px;
 
+
+        }
+        #cardContainer{
+            border-style:double;
+            border-color:gainsboro;
+            border-width:30px;
+        }
+        #profileHeading{
+            font-family: 'Amatic SC', cursive;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-family: 'Shadows Into Light', cursive;
+            padding-left: 40%;
 
         }
     </style>
@@ -219,39 +231,38 @@
 
 
 
-    <section>
-        <div class="card">
+    <section id="cardContainer" >
+        <div class="card notification" style="background-color:beige">
             <div class="card-content">
 
                 <div class="media-content">
-                    <p class="title is-4"style="size:100px">Henry A. Maldonado</p>
-                    <p class="subtitle is-6">@HenryMaldonado</p>
+                    <p class="title is-4" style="size:100px">Henry A. Maldonado</p>
+                    <p class="subtitle is-6">@HMaldonado</p>
                 </div>
             </div>
 
-            <div class="title is-active">
-               User Profile
-               
-             
-       
-                
+            <div class="title is-active" id="profileHeading">
+                User Profile
+
+
+
+
             </div>
             <div class="card-footer" style="align-items: center;">
-                <i class="fas fa-heart card-footer-item fa-2x" ></i>
+                <i class="fas fa-heart card-footer-item fa-2x"></i>
                 <i class="fas fa-swimmer card-footer-item fa-2x"></i>
                 <i class="fas fa-running card-footer-item fa-2x"></i>
 
 
             </div>
         </div>
-        </div>
     </section>
     <br>
 
 
-    <div class="section">
+    <div class="section" style="border-style:ridge;border-color:burlywood;border-width:10px;">
         <div class="container">
-            <div class="columns is-mobile">
+            <div class="columns">
                 <div class="column notification is-success has-text-black">
                     <container>
 
@@ -294,13 +305,13 @@
 
 
     <div class="hero is-info">
-        <div class="hero-body">
+        <div class="hero-body notification is-success">
             <p class="title ">
-            Last Workout Complete:
-             
+                Last Workout Complete:
+
             </p>
 
-            <p class="subtitle">
+            <p class="subtitle" id="lastworkout">
                 Last workout can appear inside this p tag
             </p>
         </div>
@@ -386,11 +397,12 @@
 
     <footer class="footer">
         <div class="content has-text-centered">
-          <p>
-            <strong>Excercise Application using Bulma/Node/Javascript</strong> by <a href="www.runescape.com">Henry Maldonado</a>.
-          </p>
+            <p>
+                <strong>Excercise Application using Bulma/Node/Javascript</strong> by <a href="www.runescape.com">Henry
+                    Maldonado</a>.
+            </p>
         </div>
-      </footer>
+    </footer>
 
 
 
