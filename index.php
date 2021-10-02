@@ -1,1 +1,1 @@
-<?php include_once('/staticpages/home.html');?>
+<?php require_once(dirname("ExerciseApp").'/staticpages/html.php')?>
