@@ -1,4 +1,2 @@
-<?php $root = realpath($_SERVER["DOCUMENT_ROOT"]);
-
-include "$root/staticpages/home.html";?>
+<?php require_once('home.html');?>
 
