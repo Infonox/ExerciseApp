@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Roboto+Condensed:wght@300&display=swap">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Roboto+Condensed:wght@300&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c7451615db.js" crossorigin="anonymous"></script>
+    <title>Excercise Application Homepage</title>
+
+    <style>
+        .title {
+            font-family: 'Playfair Display SC', serif;
+
+
+        }
+
+        .subtitle {
+            font-family: 'Roboto Condensed', sans-serif;
+
+        }
+
+        .label {
+            font-family: 'Amatic SC', cursive;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .hero-body {
+            border-style: ridge;
+            border-color: lightgrey;
+            border-width: 20px;
+
+
+        }
+
+        .column {
+
+
+            font-size: 20px;
+            font-family: 'Amatic SC', cursive;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-family: 'Shadows Into Light', cursive;
+            color: black;
+
+        }
+
+        .navbar .navbar-menu {
+            text-align: center;
+            font-family: 'Amatic SC', cursive;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: bold;
+
+
+
+
+
+
+
+        }
+
+
+
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+
+        #navbarSection {
+            border-style: double;
+            border-color: white;
+            border-width: 10px;
+
+
+        }
+        #cardContainer{
+            border-style:double;
+            border-color:gainsboro;
+            border-width:30px;
+        }
+        #profileHeading{
+            font-family: 'Amatic SC', cursive;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-family: 'Shadows Into Light', cursive;
+            padding-left: 40%;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class=" has-background-grey-light app" id="navbarSection">
+
+
+        <nav class="navbar has-background-grey-light" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+
+                <img class="weightman" src="workout.png" width="112" height="100" :style="` width: ${sizeCounter}px `"
+                    @click="weightmanGrow">
+
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample" :class="{ 'is-active': navBarIsActive}"
+                    @click="navBarIsActive = !navBarIsActive">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+
+
+            <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active': navBarIsActive}"
+                @click="navBarIsActive = !navBarIsActive">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="home.html">
+                        Home
+                    </a>
+
+                    <a class="navbar-item" href="workoutlog.html">
+                        Workout Log
+                    </a>
+
+                    <a class="navbar-item" href="profile.html">
+                        Profile
+                    </a>
+                    <a class="navbar-item" href="sharing.html">
+                        Sharing
+                    </a>
+
+
+
+
+
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            More
+                        </a>
+
+
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item" href="about.html">
+                                About
+                            </a>
+
+                            <a class="navbar-item" href="contact.html">
+                                Contact
+                            </a>
+                            <hr class="navbar-divider">
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="navbar-end">
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+            <div class="buttons">
+                <a class="button is-primary" style="background-color:grey">
+                    <strong></strong>Sign up</strong>
+                </a>
+                <a class="button is-light">
+                    Log in
+                </a>
+            </div>
+
+
+
+
+
+
+
+        </nav>
+    </section>
+
+
+
+
+    <section id="cardContainer" >
+        <div class="card notification" style="background-color:beige">
+            <div class="card-content">
+
+                <div class="media-content">
+                    <p class="title is-4" style="size:100px">Henry A. Maldonado</p>
+                    <p class="subtitle is-6">@HMaldonado</p>
+                </div>
+            </div>
+
+            <div class="title is-active" id="profileHeading">
+                User Profile
+
+
+
+
+            </div>
+            <div class="card-footer" style="align-items: center;">
+                <i class="fas fa-heart card-footer-item fa-2x"></i>
+                <i class="fas fa-swimmer card-footer-item fa-2x"></i>
+                <i class="fas fa-running card-footer-item fa-2x"></i>
+
+
+            </div>
+        </div>
+    </section>
+    <br>
+
+
+    <div class="section" style="border-style:ridge;border-color:burlywood;border-width:10px;">
+        <div class="container">
+            <div class="columns">
+                <div class="column notification is-success has-text-black">
+                    <container>
+
+                        <span style="font-size:80px;">User Image:</span>
+                        <br>
+                        <br>
+
+
+
+                        <img class="is-rounded" src="HenryMPicture.png">
+
+                    </container>
+
+
+
+                </div>
+                <div class="column notification is-danger has-text-black">
+                    <span style="font-size:80px;">Age:</span>
+                    <br>
+                    <span style="font-size:45px">25</span>
+
+                </div>
+                <div class="column notification is-primary has-text-black">
+                    <span style="font-size:80px;">Weight:</span>
+                    <br>
+                    <span style="font-size:45px">150lbs</span>
+                </div>
+                <div class="column notification is-warning has-text-black">
+                    <span style="font-size:80px;">Description</span>
+                    <br>
+                    Nam dapibus venenatis leo vel mattis. Maecenas pretium quam et commodo eleifend. Suspendisse
+                    tincidunt orci in gravida vestibulum. Donec sollicitudin vitae lacus sed viverra. Lorem ipsum dolor
+                    sit amet, consectetur adipiscing elit. Sed eu augue augue. Donec imperdiet enim vel urna lobortis
+                    euismod. Donec ut quam eget diam blandit sodales. Phasellus finibus tortor nec enim sagittis, ut
+                    dictum ex interdum. Fus. Nulla commodo et justo sit ame
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="hero is-info">
+        <div class="hero-body notification is-success">
+            <p class="title ">
+                Last Workout Complete:
+
+            </p>
+
+            <p class="subtitle" id="lastworkout">
+                Last workout can appear inside this p tag
+            </p>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-------------------
+    {{test}}
+
+    THIS IS THE HOME PAGE!
+    ------------------------------>
+
+    </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src=MyScript.js></script>
+
+
+
+
+    <!----BELOW IS PRACTICE JQUERY CODE, UNUSED FOR NOW--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script>var dropdown = document.querySelector('#drop1');
+        dropdown.addEventListener('click', function (event) {
+            event.stopPropagation();
+            dropdown.classList.toggle('is-active');
+        });</script>
+
+    <script>
+
+
+        let size = 72;
+
+        $(".weightman").click(function () {
+
+            size += 10;
+
+            $(".weightman").css({ width: size })
+
+
+        })
+    </script>
+    ---------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Excercise Application using Bulma/Node/Javascript</strong> by <a href="www.runescape.com">Henry
+                    Maldonado</a>.
+            </p>
+        </div>
+    </footer>
+
+
+
+
+
+</body>
+
+
+</html>
