@@ -1,1 +1,1 @@
-<? require_once( dirname(__FILE__).'/../NoFramework/home.html');?>
+<? require_once('home.html');?>
