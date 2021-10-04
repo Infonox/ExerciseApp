@@ -1,1 +1,1 @@
-<?php require_once('home.html')?>
+<?include dirname(__FILE__).'/../NoFramework/home.html';?>
