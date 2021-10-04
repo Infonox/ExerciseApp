@@ -1,2 +1,4 @@
-<?php require_once(dirname("ExerciseApp").'/staticpages/home.html')?>
+<?php $root = realpath($_SERVER["DOCUMENT_ROOT"]);
+
+include "$root/staticpages/home.html";?>
 
