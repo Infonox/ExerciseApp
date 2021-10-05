@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Roboto+Condensed:wght@300&display=swap">
     <script src="https://kit.fontawesome.com/c7451615db.js" crossorigin="anonymous"></script>
-    <title>Exercise Application Homepage</title>
+    <title>Excercise Application Homepage</title>
 
     <style>
         .title {
@@ -133,7 +133,7 @@
             <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active': navBarIsActive}"
                 @click="navBarIsActive = !navBarIsActive">
                 <div class="navbar-start">
-                    <a class="navbar-item" href="home.html">
+                    <a class="navbar-item" href="index.html">
                         Home
                     </a>
 
@@ -185,15 +185,17 @@
 
             </div>
             <div class="buttons">
-                <a class="button is-primary" style="background-color:grey">
-                    Sign up
+                <a class="button is-primary" style="background-color:grey" href="register.html">
+                    <strong></strong>Sign up</strong>
                 </a>
-                <a class="button is-light">
-                    Login
-                   
+                <a class="button is-light" href="login.html">
+                    Log in
                 </a>
             </div>
-         
+
+
+
+
 
 
 
@@ -225,69 +227,112 @@
     THIS IS THE HOME PAGE!
     ------------------------------>
 
-    <section class="hero is-link">
+    <section class="hero is-danger">
         <div class="hero-body">
             <p class="title ">
-                Welcome to the Exercise Application!
-                <i class="fas fa-running fa-2x"></i>
+                Workout Log
+                <i class="fas fa-clipboard fa-2x"></i>
             </p>
 
             <p class="subtitle">
-                Create a profile below!
+                Record your Excercise data!
             </p>
         </div>
     </section>
     <br>
 
     <div class="container">
-        <div class="column">
-            <div class="field">
-                <label class="label">Full Name</label>
-                <div class="control ">
-                    <input class="input" name="fullname" type="text" placeholder="Who's the new champ?">
-                </div>
-            </div>
-            <div class="field">
-                <label class="label">Age</label>
-                <div class="control">
-                    <input class="input" name="age" type="number" placeholder="Lookin' swell">
-                </div>
-            </div>
-            <div class="field">
-                <label class="label">Weight</label>
-                <div class="control">
-                    <input class="input" name="weight" type="number" placeholder="Doesn't define you">
-                </div>
-            </div>
-            <div class="field">
-                <label class="label">How active are you?</label>
-                <div class="control">
-                    <div class="select">
-                        <select name="activity">
-                            <option>Very Active</option>
-                            <option>Not very Active</option>
-                            <option>What is this, "Working out"?</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="field">
-                <label class="label">Some things about yourself, hobbies/lifestyle goals, exc</label>
-                <div class="control">
-                    <textarea class="textarea" name="description" type="text"
-                        placeholder="What makes you interesting?"></textarea>
-                </div>
-            </div>
-            <div class="field is-grouped">
-                <div class="control">
-                    <button class="button is-link">Submit</button>
-                </div>
-                <div class="control">
-                    <button class="button is-link is-light">Cancel</button>
-                </div>
-            </div>
+        <section>
+            <form id="Form">
+                <fieldset>
+                    <legend>New Item</legend>
+                    <label for="Time">Time:</label>
+                    <input class="control" type="text" id="Time" name="Time" placeholder="Time spent"
+                        pattern="[0-9]{1,2}" autofocus required>
+                    <label for="Type">Action:</label>
+                    <select class="control"id="Type" name="Type" required>
+                        <option value=""></option>
+                        <option>Run</option>
+                        <option>Swimming</option>
+                        <option>Bike</option>
+                        <option>Drink</option>
+                        <option>Eat</option>
+                        <option>Crossfit</option>
+                        <option>Yoga</option>
+                    </select>
+                    <label for="Date">Date:</label>
+                    <input class="control" type="text" id="Date" name="Date" placeholder="mm/dd/yyyy"
+                        pattern="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d" required>
+                    <button class="button" type="submit" class="add">Add</button>
+                </fieldset>
+            </form>
+        </section>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><abbr title="workoutNumber">Workout Number</abbr></th>
+                    <th><abbr title="workoutName">Workout Name</abbr></th>
+                    <th><abbr title="time">Time Spent</abbr></th>
+                    <th><abbr title="Date:">Date</abbr></th>
 
-        </div>
+
+
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th><abbr title="workoutNumber">Workout Number</abbr></th>
+                    <th><abbr title="workoutName">Workout Name</abbr></th>
+                    <th><abbr title="time">Time Spent</abbr></th>
+                    <th><abbr title="Date:">Date</abbr></th>
+
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <th>1</th>
+                    <td>name</td>
+                    <td>timespent</td>
+                    <td>date</td>
+
+
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <td>name</td>
+                    <td>timespent</td>
+                    <td>date</td>
+
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <td>name</td>
+                    <td>timespent</td>
+                    <td>date</td>
+
+                </tr>
+                <tr class="is-selected">
+                    <th>1</th>
+                    <td>name</td>
+                    <td>timespent</td>
+                    <td>date</td>
+
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <td>name</td>
+                    <td>timespent</td>
+                    <td>date</td>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <td>name</td>
+                    <td>timespent</td>
+                    <td>date</td>
+                </tr>
+                <tr>
+            </tbody>
+        </table>
     </div>
 
 
