@@ -1,7 +1,6 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="container">
+   <Nav/>
       <router-view/>
   </div>
   
@@ -13,8 +12,12 @@
 
  <script>
   
- export default {
+import Nav from "./components/Nav.vue";
 
- };
+export default {
+  components: {
+    Nav,
+  },
+}; 
  </script>
 
