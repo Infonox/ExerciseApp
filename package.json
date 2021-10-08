@@ -7,6 +7,7 @@
     "doc": "docs"
   },
   "dependencies": {
+    "@vue/cli": "^4.5.13",
     "express": "4.17.1",
     "lodash": "^4.17.21"
   },
