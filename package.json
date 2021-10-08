@@ -1,0 +1,28 @@
+{
+  "name": "exerciseapp",
+  "version": "1.0.0",
+  "description": "ExerciseApp",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Infonox/ExerciseApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Infonox/ExerciseApp/issues"
+  },
+  "homepage": "https://github.com/Infonox/ExerciseApp#readme"
+}
