@@ -1,10 +1,12 @@
 const session = {
     user: null,
     messages: [],
-    Login(){
+    Login(email, password){
+
         this.user = {
-            FirstName: 'Henry',
-            LastName: 'Maldonado',
+            FirstName: 'Moshe',
+            LastName: email,
+            Password: password,
             id: 613,
         }
     }
@@ -12,4 +14,4 @@ const session = {
 
 export default session;
 
-//export function 
+//export function
