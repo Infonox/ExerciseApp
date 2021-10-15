@@ -36,11 +36,17 @@
       @click="navBarIsActive = !navBarIsActive"
     >
       <div class="navbar-start">
-        <a class="navbar-item" href="/"> Home </a>
+        <router-link class="navbar-item is-tab" to="/" active-class="is-active" exact>
+        Home
+      </router-link>
 
-        <a class="navbar-item" href="workoutlog.html"> Workout Log </a>
+        <router-link class="navbar-item is-tab" to="/feed" active-class="is-active" exact>
+        Workout Log
+      </router-link>
 
-        <a class="navbar-item" href="profile.html"> Profile </a>
+       <router-link class="navbar-item is-tab" to="/" active-class="is-active" exact>
+        Profile
+      </router-link>
         <a class="navbar-item" href="sharing.html"> Sharing </a>
 
         <div class="navbar-item has-dropdown is-hoverable">
