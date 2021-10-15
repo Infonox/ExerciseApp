@@ -44,7 +44,7 @@
         Workout Log
       </router-link>
 
-       <router-link class="navbar-item is-tab" to="/" active-class="is-active" exact>
+       <router-link class="navbar-item is-tab" to="" active-class="is-active" exact>
         Profile
       </router-link>
         <a class="navbar-item" href="sharing.html"> Sharing </a>
