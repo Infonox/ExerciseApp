@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Session from '/services/session';
+import Session from '../services/session';
 import Home from '../views/Home.vue';
 import Feed from '../views/Feed.vue';
 import Workoutlog from '../views/Workoutlog.vue';
@@ -66,4 +66,4 @@ router.beforeEach((to, from, next) => {
     }
   } )
 
-export default router
+export default router;

@@ -7,13 +7,13 @@
             Log in
           </a>
     </div>
-    <div v-else>
+    <div v-else class="title" style="border-style:double; font-size: 28px;">
         Hello {{name}} 
     </div>
 </template>
 
 <script>
-import Session from "/services/session";
+import Session from "../services/session";
 export default {
     data (){
         return ({ 
@@ -28,7 +28,7 @@ export default {
     },
     computed:{
         name(){
-            return this.Session.user.FirstName + ' ' + this.Session.user.LastName;
+            return this.Session.user.firstName + ' ' + this.Session.user.lastName;
         }
     }
 }

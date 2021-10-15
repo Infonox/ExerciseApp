@@ -19,15 +19,15 @@
         <div class="column">
             <form class="section" @submit.prevent="login()">
             <div class="field">
-                <label class="label">Username</label>
+                <label class="label">Enter email address:</label>
                 <div class="control form">
-                    <input class="input" name="fullname" type="username" placeholder="Enter username">
+                    <input class="input" name="email" type="text" placeholder="Enter username" v-model="email">
                 </div>
             </div>
             <div class="field">
                 <label class="label">Password</label>
                 <div class="control">
-                    <input class="input" name="age" type="password" placeholder="Enter password">
+                    <input class="input" name="pass" type="password" placeholder="Enter password" v-model="password">
                 </div>
 
             </div>
@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import Session from "/services/session";
+import Session from "../services/session";
 export default {
     data: ()=>({
         email: null,
