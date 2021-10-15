@@ -36,7 +36,7 @@
       @click="navBarIsActive = !navBarIsActive"
     >
       <div class="navbar-start">
-        <a class="navbar-item" href="index.html"> Home </a>
+        <a class="navbar-item" href="/"> Home </a>
 
         <a class="navbar-item" href="workoutlog.html"> Workout Log </a>
 
