@@ -4,7 +4,7 @@
       <div class="hero-body">
         <p class="title">
           Welcome to the Exercise Application!
-          <i class="fas fa-question-circle"></i>
+          <i class="fas fa-running fa-2x"></i>
         </p>
 
         <p class="subtitle">Create a profile below!</p>
