@@ -9,7 +9,7 @@ const port= process.env.PORT || 8080;
 
 app.use(serveStatic(path.join(__dirname, '../docs')));
 
-app.listen(PORT, () => {
+app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
 
