@@ -2,6 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Session from '/services/session';
 import Home from '../views/Home.vue';
 import Feed from '../views/Feed.vue';
+import Workoutlog from '../views/Workoutlog.vue';
+import Sharing from '../views/Sharing.vue';
+import Signup from '../views/Signup.vue';
+import Contact from '../views/Contact.vue';
 
 
 const routes = [
@@ -15,6 +19,27 @@ const routes = [
         name: 'Feed',
         component: Feed,
         meta: { requiresLogin: true }
+      },
+      {
+        path: '/workoutlog',
+        name: 'Workoutlog',
+        component: Workoutlog,
+      },
+      {
+        path: '/sharing',
+        name: 'Sharing',
+        component: Sharing,
+      },
+      {
+        path: '/signup',
+        name: 'Signup',
+        component: Signup,
+       
+      },
+      {
+        path: '/contact',
+        name: 'Contact',
+        component: Contact,
       },
     {
         path: '/about',

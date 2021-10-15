@@ -1,32 +1,52 @@
 <template>
-  <form class="section" @submit.prevent="login()">
-      <div class="field">
-        <p class="control has-icons-left has-icons-right">
-            <input class="input" type="email" placeholder="Email" v-model="email">
-            <span class="icon is-small is-left">
-            <i class="fas fa-envelope"></i>
-            </span>
-            <span class="icon is-small is-right">
-            <i class="fas fa-check"></i>
-            </span>
-        </p>
+
+<div>
+
+    <section class="hero" style="background-color: lightskyblue">
+        <div class="hero-body">
+            <p class="title ">
+                Login
+                <i class="fas fa-address-book fa-2x"></i>
+            </p>
+
+            <p class="subtitle">
+                Returning users, please login
+            </p>
         </div>
-        <div class="field">
-        <p class="control has-icons-left">
-            <input class="input" type="password" placeholder="Password" v-model="password">
-            <span class="icon is-small is-left">
-            <i class="fas fa-lock"></i>
-            </span>
-        </p>
+    </section>
+
+     <div class="container">
+        <div class="column">
+            <form class="section" @submit.prevent="login()">
+            <div class="field">
+                <label class="label">Username</label>
+                <div class="control form">
+                    <input class="input" name="fullname" type="username" placeholder="Enter username">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Password</label>
+                <div class="control">
+                    <input class="input" name="age" type="password" placeholder="Enter password">
+                </div>
+
+            </div>
+            <div class="control">
+                <button class="button is-link title" style="height:50px;">Login</button>
+            </div>
+            </form>
+            
         </div>
-        <div class="field">
-        <p class="control">
-            <button class="button is-success">
-            Login
-            </button>
-        </p>
-        </div>
-  </form>
+    </div>
+
+
+
+
+
+
+
+</div>
+  
 </template>
 
 <script>
@@ -46,4 +66,8 @@ export default {
 </script>
 
 <style>
+@import url(https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Amatic+SC&family=Roboto+Condensed:wght@300&display=swap);
+@import url("../assets/styles.css");
 </style> 

@@ -36,26 +36,62 @@
       @click="navBarIsActive = !navBarIsActive"
     >
       <div class="navbar-start">
-        <router-link class="navbar-item is-tab" to="/" active-class="is-active" exact>
-        Home
-      </router-link>
+        <router-link
+          class="navbar-item is-tab"
+          to="/"
+          active-class="is-active"
+          exact
+        >
+          Home
+        </router-link>
 
-        <router-link class="navbar-item is-tab" to="/feed" active-class="is-active" exact>
-        Workout Log
-      </router-link>
+        <router-link
+          class="navbar-item is-tab"
+          to="/workoutlog"
+          active-class="is-active"
+          exact
+        >
+          Workout Log
+        </router-link>
 
-       <router-link class="navbar-item is-tab" to="" active-class="is-active" exact>
-        Profile
-      </router-link>
-        <a class="navbar-item" href="sharing.html"> Sharing </a>
+        <router-link
+          class="navbar-item is-tab"
+          to="/feed"
+          active-class="is-active"
+          exact
+        >
+          Profile
+        </router-link>
+        <router-link
+          class="navbar-item is-tab"
+          to="/sharing"
+          active-class="is-active"
+          exact
+        >
+          Sharing
+        </router-link>
 
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link"> More </a>
 
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="about.html"> About </a>
+            <router-link
+              class="navbar-item is-tab"
+              to="/about"
+              active-class="is-active"
+              exact
+            >
+              About
+            </router-link>
 
-            <a class="navbar-item" href="contact.html"> Contact </a>
+            <router-link
+              class="navbar-item is-tab"
+              to="/contact"
+              active-class="is-active"
+              exact
+            >
+              Contact
+            </router-link>
             <hr class="navbar-divider" />
           </div>
         </div>
@@ -96,10 +132,8 @@ export default {
 </script>
 
 <style>
- @import url(https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap);
-  @import url(https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap);
-  @import url(https://fonts.googleapis.com/css2?family=Amatic+SC&family=Roboto+Condensed:wght@300&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Amatic+SC&family=Roboto+Condensed:wght@300&display=swap);
 @import url("../assets/styles.css");
-
-
 </style>

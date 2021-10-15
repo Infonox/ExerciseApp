@@ -1,8 +1,8 @@
 <template>
     <div class="buttons" v-if="!Session.user">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
+          <router-link class="navbar-item  button is-light" to="/signup" >
+        Signup
+      </router-link>
           <a class="button is-light" @click="login">
             Log in
           </a>
