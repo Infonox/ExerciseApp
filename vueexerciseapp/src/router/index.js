@@ -1,3 +1,10 @@
+
+//Notes: how can we make the content on our profile page stay there even when refreshed?
+//how can we register a user and login right to their profile page at the same tiem (Add function in Users.js??)
+//allow data in workoutlog to be saved into a "User"
+
+
+
 import { createRouter, createWebHistory } from 'vue-router'
 import Session from '../services/session';
 import Home from '../views/Home.vue';
@@ -25,6 +32,7 @@ const routes = [
         path: '/workoutlog',
         name: 'Workoutlog',
         component: Workoutlog,
+        //meta: {requiresLogin: true}
       },
       {
         path: '/sharing',
