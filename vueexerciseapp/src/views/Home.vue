@@ -11,12 +11,60 @@
       </div>
     </section>
     <br />
+    <div class="columns" style="border-style:double;border-width:7px;border-color:lightgrey">
+      <div class="column">
+        <img
+          src="../assets/workoutswim.jpeg"
+          style="
+            width: 225px;
+            height: 225px;
+            border-style: double;
+            border-width: 5px;
+          "
+        />
+      </div>
+      <div class="column">
+        ¨The only person you are destined to become is the person you decide to
+        be.¨ – Ralph Waldo Emerson
+      </div>
+      <div class="column">
+        <img
+          src="../assets/workoutrunning.jpeg"
+          style="
+            width: 225px;
+            height: 225px;
+            border-style: double;
+            border-width: 5px;
+          "
+        />
+      </div>
+      <div class="column">
+        “The last three or four reps is what makes the muscle grow. This area of
+        pain divides a champion from someone who is not a champion.”- Arnold
+        Schwarzenegger
+      </div>
+      <div class="column">
+        <img
+          src="../assets/workoutlifting.jpeg"
+          style="
+            width: 225px;
+            height: 225px;
+            border-style: double;
+            border-width: 5px;
+          "
+        />
+      </div>
+      <div class="column">
+        ¨Most people fail, not because of lack of desire, but, because of lack
+        of commitment.¨ – Vince Lombardi
+      </div>
+    </div>
 
     <form class="container" @submit.prevent="homePageSetup()">
-
       <div class="column">
         <div class="field">
-                Enter some info and use (email:admin,pass:admin) for testing, profile page will be updated with contents of this page
+          Enter some info and use (email:admin,pass:admin) for testing, profile
+          page will be updated with contents of this page
           <label class="label">Full Name</label>
           <div class="control">
             <input
@@ -136,13 +184,13 @@ export default {
     fullname: null,
     weight: null,
     description: null,
-    
+
     age: null,
     Session,
-    
+
     toRoute: "/profile",
     registeremail: null,
-    registerpass: null
+    registerpass: null,
   }),
   methods: {
     homePageSetup() {
@@ -153,13 +201,8 @@ export default {
       Session.age = this.age;
       Session.description = this.description;
       Session.fullname = this.fullname;
-     
-     
-     
 
       this.Session.HomeRegister(this.registeremail, this.registerpass);
-     
-      
     },
   },
 }; //view model
