@@ -19,8 +19,11 @@
 }
 
 .column {
-  border-style: groove;
-  border-color: lightgrey;
+  font-size: 20px;
+  font-family: 'Amatic SC', cursive;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Shadows Into Light', cursive;
+  color: black;
 }
 
 .navbar .navbar-menu {

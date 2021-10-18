@@ -56,7 +56,7 @@
 
         <router-link
           class="navbar-item is-tab"
-          to="/feed"
+          to="/profile"
           active-class="is-active"
           exact
         >

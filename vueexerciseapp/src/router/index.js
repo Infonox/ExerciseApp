@@ -6,6 +6,7 @@ import Workoutlog from '../views/Workoutlog.vue';
 import Sharing from '../views/Sharing.vue';
 import Signup from '../views/Signup.vue';
 import Contact from '../views/Contact.vue';
+import Profile from '../views/Profile.vue';
 
 
 const routes = [
@@ -18,7 +19,7 @@ const routes = [
         path: '/feed',
         name: 'Feed',
         component: Feed,
-        meta: { requiresLogin: true }
+        meta: { requiresLogin: true } //keeping this false for now to test profile data
       },
       {
         path: '/workoutlog',
@@ -40,6 +41,12 @@ const routes = [
         path: '/contact',
         name: 'Contact',
         component: Contact,
+      },
+      {
+        path: '/profile',
+        name: 'Profile',
+        component: Profile,
+        meta: {requiresLogin: true}
       },
     {
         path: '/about',

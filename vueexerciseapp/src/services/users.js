@@ -5,9 +5,9 @@ const list = [
     {
         firstName: 'Henry',
         lastName: 'Maldonado',
-        handle: 'infonox67@gmail.com',
+        handle: 'admin',
         pic: 'assets/HenryMPicture.png',
-        password: 'howareya',
+        password: 'admin',
         isAdmin: true,
         emails: [
             "maldonah2@newpaltz.edu"
