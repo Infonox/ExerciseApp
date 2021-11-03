@@ -7,6 +7,9 @@ const list = [
         lastName: 'Maldonado',
         handle: 'admin',
         pic: 'assets/HenryMPicture.png',
+        description:'',
+        weight:'',
+        age:'',
         password: 'admin',
         isAdmin: true,
         emails: [
@@ -52,7 +55,7 @@ export function Add(user) {
     }
     list.push(user);
     return { ...user, password: undefined };
-}
+}   //MongoDB axios, database 
 
 
 export function Update(user_id, user) {

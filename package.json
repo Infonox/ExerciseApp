@@ -8,8 +8,11 @@
   },
   "dependencies": {
     "@vue/cli": "^4.5.13",
+    "connect-history-api-fallback": "^1.6.0",
     "express": "4.17.1",
-    "lodash": "^4.17.21"
+    "install": "^0.13.0",
+    "lodash": "^4.17.21",
+    "npm": "^8.1.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.13"

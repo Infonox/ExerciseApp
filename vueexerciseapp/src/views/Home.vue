@@ -65,16 +65,30 @@
         <div class="field">
           Enter some info and use (email:admin,pass:admin) for testing, profile
           page will be updated with contents of this page
-          <label class="label">Full Name</label>
+          <label class="label">First Name</label>
           <div class="control">
             <input
               class="input"
-              name="fullname"
+              name="firstName"
               type="text"
               placeholder="Who's the new champ?"
-              v-model="fullname"
+              v-model="firstName"
             />
           </div>
+          
+        </div>
+        <div class="field">
+          <label class="label">Last Name</label>
+          <div class="control">
+            <input
+              class="input"
+              name="lastName"
+              type="text"
+              placeholder="Who's the new champ?"
+              v-model="LastName"
+            />
+          </div>
+          
         </div>
         <div class="field">
           <label class="label">Age</label>
@@ -181,7 +195,8 @@ export default {
   name: "Home",
   components: {},
   data: () => ({
-    fullname: null,
+    firstName: null,
+    LastName: null,
     weight: null,
     description: null,
 
@@ -202,7 +217,7 @@ export default {
       Session.description = this.description;
       Session.fullname = this.fullname;
 
-      this.Session.HomeRegister(this.registeremail, this.registerpass);
+      this.Session.HomeRegister(this.registeremail, this.registerpass, this.weight, this.age, this.description, this.firstName, this.LastName);
     },
   },
 }; //view model
