@@ -8,8 +8,8 @@
       <img
         class="weightman"
         src="../assets/workout.png"
-        width="112"
-        height="100"
+        width="50"
+        height="50"
         :style="` width: ${sizeCounter}px `"
         @click="weightmanGrow"
       />
