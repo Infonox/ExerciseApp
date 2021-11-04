@@ -94,10 +94,10 @@
           </div>
         </div>
 
-        <div class="navbar-end"></div>
+        <div class="navbar-end"> <login-badge /></div>
       </div>
     </div>
-    <login-badge />
+    
   </nav>
 </template>
 
