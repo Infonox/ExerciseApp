@@ -1,18 +1,27 @@
 <template>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <nav
+    class="navbar has-background-grey-light"
+    role="navigation"
+    aria-label="main navigation"
+  >
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-        <img src="../assets/logo.png" />
-      </a>
-      <h3 class="title">Hello World</h3>
+      <img
+        class="weightman"
+        src="../assets/workout.png"
+        width="112"
+        height="100"
+        :style="` width: ${sizeCounter}px `"
+        @click="weightmanGrow"
+      />
 
       <a
         role="button"
         class="navbar-burger"
         aria-label="menu"
         aria-expanded="false"
-        :class="{ 'is-active': isActive }"
-        @click="isActive = !isActive"
+        data-target="navbarBasicExample"
+        :class="{ 'is-active': navBarIsActive }"
+        @click="navBarIsActive = !navBarIsActive"
       >
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -20,45 +29,102 @@
       </a>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active': isActive }">
+    <div
+      id="navbarBasicExample"
+      class="navbar-menu"
+      :class="{ 'is-active': navBarIsActive }"
+      @click="navBarIsActive = !navBarIsActive"
+    >
       <div class="navbar-start">
-        <a class="navbar-item"> Home </a>
+        <router-link
+          class="navbar-item is-tab"
+          to="/"
+          active-class="is-active"
+          exact
+        >
+          Home
+        </router-link>
 
-        <a class="navbar-item"> Documentation </a>
+        <router-link
+          class="navbar-item is-tab"
+          to="/workoutlog"
+          active-class="is-active"
+          exact
+        >
+          Workout Log
+        </router-link>
+
+        <router-link
+          class="navbar-item is-tab"
+          to="/profile"
+          active-class="is-active"
+          exact
+        >
+          Profile
+        </router-link>
+        <router-link
+          class="navbar-item is-tab"
+          to="/sharing"
+          active-class="is-active"
+          exact
+        >
+          Sharing
+        </router-link>
 
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link"> More </a>
 
           <div class="navbar-dropdown">
-            <a class="navbar-item"> About </a>
-            <a class="navbar-item"> Jobs </a>
-            <a class="navbar-item"> Contact </a>
+            <router-link
+              class="navbar-item is-tab"
+              to="/about"
+              active-class="is-active"
+              exact
+            >
+              About
+            </router-link>
+
+            <router-link
+              class="navbar-item is-tab"
+              to="/contact"
+              active-class="is-active"
+              exact
+            >
+              Contact
+            </router-link>
             <hr class="navbar-divider" />
-            <a class="navbar-item"> Report an issue </a>
           </div>
         </div>
-      </div>
 
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <login-badge/>
-        </div>
+        <div class="navbar-end"></div>
       </div>
     </div>
+    <login-badge />
   </nav>
 </template>
 
 <script>
-import LoginBadge from "./LoginBadge.vue";
-
+import LoginBadge from "./LoginBadge";
 export default {
   data() {
     return {
-      //global data for this component
-
       isActive: false,
+      title: "HELLO WORLD",
+      test: "TEST TEST 3 4",
+      navBarIsActive: false,
+      sizeCounter: 60,
     };
   },
+  methods: {
+    weightmanGrow() {
+      this.sizeCounter += 20;
+
+      if (this.sizeCounter == 180) {
+        this.sizeCounter = 60;
+      }
+    },
+  },
+
   components: {
     LoginBadge,
   },
@@ -66,4 +132,8 @@ export default {
 </script>
 
 <style>
+@import url(https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Amatic+SC&family=Roboto+Condensed:wght@300&display=swap);
+@import url("../assets/styles.css");
 </style>

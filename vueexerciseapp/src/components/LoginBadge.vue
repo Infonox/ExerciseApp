@@ -1,20 +1,19 @@
 <template>
-  <div class="buttons" v-if="!Session.user">
-    <a class="button is-primary">
-      <strong>Sign up</strong>
-    </a>
-    <a class="button is-light" @click="login"> Log in </a>
-  </div>
-  <div v-else>
-      Hello {{name}}
-
-
-  </div>
+    <div class="buttons" v-if="!Session.user">
+          <router-link class="navbar-item  button is-light" to="/signup" >
+        Signup
+      </router-link>
+          <a class="button is-light" @click="login">
+            Log in
+          </a>
+    </div>
+    <div v-else class="title" style="border-style:double; font-size: 28px;">
+        Hello {{name}} 
+    </div>
 </template>
 
 <script>
-import Session from "/services/session";
-
+import Session from "../services/session";
 export default {
     data (){
         return ({ 
@@ -23,17 +22,21 @@ export default {
     },
     methods: {
         login(){
-            this.Session.Login();
+            this.$router.push('/login');
+            //this.Session.Login();
         }
     },
     computed:{
         name(){
-            return this.Session.user.FirstName + ' ' + this.Session.user.LastName;
+            return this.Session.user.firstName + ' ' + this.Session.user.lastName;
         }
     }
 }
 </script>
 
-
 <style>
+ @import url(https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap);
+  @import url(https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap);
+  @import url(https://fonts.googleapis.com/css2?family=Amatic+SC&family=Roboto+Condensed:wght@300&display=swap);
+@import url("../assets/styles.css");
 </style>
