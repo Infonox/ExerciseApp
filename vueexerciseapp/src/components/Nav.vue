@@ -10,7 +10,7 @@
         src="../assets/workout.png"
         :style="` width: ${sizeCounter}px max-width:30% `"
         @click="weightmanGrow"
-      />
+      >
 
       <a
         role="button"
