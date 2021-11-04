@@ -8,8 +8,6 @@
       <img
         class="weightman"
         src="../assets/workout.png"
-        width="50"
-        height="50"
         :style="` width: ${sizeCounter}px `"
         @click="weightmanGrow"
       />
@@ -112,8 +110,7 @@ export default {
       title: "HELLO WORLD",
       test: "TEST TEST 3 4",
       navBarIsActive: false,
-      sizeCounter: 60,
-    };
+      sizeCounter: 20    };
   },
   methods: {
     weightmanGrow() {
