@@ -8,9 +8,11 @@
       <img
         class="weightman"
         src="../assets/workout.png"
-        :style="` width: ${sizeCounter}px max-width:30% `"
+        :style="` width: ${sizeCounter}px `"
         @click="weightmanGrow"
       >
+    </div>
+    <div>
 
       <a
         role="button"
@@ -110,14 +112,14 @@ export default {
       title: "HELLO WORLD",
       test: "TEST TEST 3 4",
       navBarIsActive: false,
-      sizeCounter: 20    };
+      sizeCounter: 50   };
   },
   methods: {
     weightmanGrow() {
       this.sizeCounter += 20;
 
-      if (this.sizeCounter == 180) {
-        this.sizeCounter = 60;
+      if (this.sizeCounter == 190) {
+        this.sizeCounter = 50;
       }
     },
   },

@@ -115,43 +115,10 @@ export default {
     Mode: "Submit",
     Validation: 0,
     WorkoutId: 1,
-  }),
-  methods: {
-    btnSubmit: function () {
-      this.fullData.push({
-        WorkoutId: this.WorkoutId++,
-        Name: this.name,
-        timeSpent: this.timeSpent,
-        date: this.date,
-      });
-      if (this.Mode == "Update") { //changes button mode back to Submit mode if update is clicked
-        this.Mode = "Submit";
-      }
-      this.name = "";
-      this.timeSpent = "";
-      this.date = "";
-    },
-    OnEdit: function (d) {
-      let OurFitnessData = this.OurFitnessData.filter(function (val) {
-        return val.Id == d;
-      });
-      this.WorkoutId = OurFitnessData[0].Id;
-      this.name = OurFitnessData[0].Name;
-      this.timeSpent = OurFitnessData[0].timeSpent;
-      this.date = OurFitnessData[0].date;
-      this.Mode = "Update";
-      this.OurFitnessData = this.OurFitnessData.filter(function (val) {
-        return val.Id != d;
-      });
-    },
-
-    OnDelete: function (d) {
-      this.OurFitnessData = this.OurFitnessData.filter(function (val) {
-        return val.Id != d;
-      });
-    },
-  },
-};
+  })
+}
+  
+     
 </script>
 
 <style>
