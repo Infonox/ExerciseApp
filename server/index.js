@@ -1,5 +1,5 @@
 
-
+//const serveStatic = require('serve-static');
 const express = require('express')
 const app = express()
 
@@ -8,7 +8,6 @@ const app = express()
 //const connectHistory = require('connect-history-api-fallback')
 //app.use(connectHistory()) These 2 lines of code could also be used instead of .get(*) below
 
-const serveStatic = require('serve-static');
 const path = require('path');
 require('dotenv').config();
 const port= process.env.PORT || 8080;
@@ -27,6 +26,7 @@ app
 app.use('/', express.static(path.join(__dirname, '../docs')))
 
 app.get('*',(req,res) => res.sendFile(path.join(__dirname, '../docs/index.html')))
+
 
 app.use((err,req,res,next) =>{
     res.status(err.code || 500).send(err);
