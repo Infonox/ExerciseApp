@@ -1,19 +1,19 @@
-http://localhost:3100/users
+http://localhost:8081/users
 
 ###separate request
 
-http://localhost:3100/users/1
+http://localhost:8081/users/1
 
 ###
-http://localhost:3100/posts
+http://localhost:8081/posts
 
 
 ###
-http://localhost:3100/posts/1
+http://localhost:8081/posts/1
 NP-Demo: Best Class Ever
 
 ###
-POST http://localhost:3100/posts/
+POST http://localhost:8081/posts/
 Content-Type: application/json
 
 {
@@ -29,15 +29,15 @@ https://api.nasa.gov/planetary/apod?api_key=te2AWQonPBWdmeQwm3eutLVyZ1eAZbHBWeFv
 
 
 ###
-http://localhost:3100/posts/search?q=b
+http://localhost:8081/posts/search?q=afraid
 
 ###
-POST http://localhost:3100/posts
+POST http://localhost:8081/posts
 
 
 
 ###NEW SECTION FOR TESTING REGISTER/LOGIN
-POST http://localhost:3100/users/register
+POST http://localhost:8081/users/register
 Content-Type: application/json
 
     {
@@ -56,7 +56,7 @@ Content-Type: application/json
 
 ### SECTION FOR LOGGING IN
 
-POST http://localhost:3100/users/Login
+POST http://localhost:8081/users/Login
 Content-Type: application/json
 
     {
