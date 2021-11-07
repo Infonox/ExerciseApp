@@ -56,6 +56,12 @@ const routes = [
         component: Profile,
         meta: {requiresLogin: true}
       },
+      {
+        path: '/feed',
+        name: 'Feed',
+        component: Feed,
+        meta: {requiresLogin: true}
+      },
     {
         path: '/about',
         name: 'About',
