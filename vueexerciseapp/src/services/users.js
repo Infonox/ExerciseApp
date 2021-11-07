@@ -2,21 +2,18 @@
 */
 
 const list = [
-    {
+    { 
         firstName: 'Henry',
         lastName: 'Maldonado',
-        handle: 'admin',
-        pic: 'assets/HenryMPicture.png',
-        description:'',
-        weight:'',
-        age:'',
-        password: 'admin',
+        handle: '@JewPaltz',
+        pic: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMo3I5GL9_Zd_LULXRIXTzRLlVESBnoGp8sw&usqp=CAU',
+        password: 'me',
         isAdmin: true,
         emails: [
-            "maldonah2@newpaltz.edu"
+            "plotkinm@newpaltz.edu"
         ],
-        following: [{ handle: '@vp', isApproved: true }, { handle: '@johnsmith', isApproved: true },],
-        get name() { return this.firstName + ' ' + this.lastName },
+        following: [ { handle: '@vp', isApproved: true }, { handle: '@johnsmith', isApproved: true }, ],
+        get name(){ return this.firstName + ' ' + this.lastName },
     },
     {
         firstName: 'Kamala',
