@@ -1,55 +1,31 @@
 import router from "../router";
-import { Add, Login } from "./users";
-//import { Add } from "./users"x;
+import { Login } from "./users";
+import { NotificationProgrammatic } from "@oruga-ui/oruga-next/dist/esm/notification";
 
 const session = {
     user: null,
     messages: [],
-    toRoute: '/profile',
-    fullname: null,
-    weight: null,
-    description: null,
-    age: null,
+    toRoute: '/feed',
     Login(handle, password) {
 
-        const response = Login(handle, password);
+        try {
+            const response = Login(handle, password);
 
-        this.user = response.user;
+            this.user = response.user;
 
-        router.push(this.toRoute);
+            router.push(this.toRoute);
 
-    },
-    HomeRegister(handle, password, weight, age, description, firstName, lastName){ //add parameters for all inputs on homepage
-        //This method will soon be implemented to REGISTER a user instead of just Logging them in from the main profile screen instead
-        //This method will also work with the REGISTER button in the SIGNUP Page of our vue app as well
-    
-        const myUser = {
-            firstName,
-            lastName,
-            description,
-            weight,
-            age,
-            
-
-
-
+        } catch (error) {
+            this.messages.push({ text: error.msg, type: 'warning' })
+            NotificationProgrammatic.open({
+                duration: 5000,
+                message: error.msg,
+                variant: 'danger',
+                type: 'danger',
+                closable: true
+            })
 
         }
-        this.user = Add(myUser)
-        print(myUser);
-        const response = Login(handle, password);
-
-        this.user = response.user;
-
-
-        router.push(this.toRoute);
-
-
-
-
-
-
-
 
 
 
