@@ -47,7 +47,7 @@
 
         <router-link
           class="navbar-item is-tab"
-          to="/feed"
+          to="/workoutlog"
           active-class="is-active"
           exact
         >
@@ -56,11 +56,20 @@
 
         <router-link
           class="navbar-item is-tab"
-          to="/profile"
+          to="/feed"
           active-class="is-active"
           exact
         >
           Feed
+        </router-link>
+        
+        <router-link
+          class="navbar-item is-tab"
+          to="/profile"
+          active-class="is-active"
+          exact
+        >
+          Profile
         </router-link>
         <router-link
           class="navbar-item is-tab"
