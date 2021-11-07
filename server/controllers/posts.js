@@ -1,12 +1,16 @@
 const express = require("express");
+const mongo = require('mongodb'); //database that will hold our posts
 const models = require("../models/posts");
+
 
 const app = express.Router();
 
 
 app
 .get("/", (req, res, next)=>{
+
     res.send(models.getAll());
+    
 
 })
 .get("/search", (req, res, next)=>{

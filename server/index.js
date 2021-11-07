@@ -1,6 +1,8 @@
 
 //const serveStatic = require('serve-static');
 const express = require('express')
+//const Parser = require('body-parser'); //not necessary because we have .use(express.json)
+const cors=require('cors') //configures origins of complex requests (like delete) pre-flighting configuration
 const app = express()
 
 
@@ -17,7 +19,10 @@ const postsController =  require('./controllers/posts')
 
 app
 
+
+
 .use(express.json())
+.use(cors())
 .use('/users', usersController)
 .use('/posts', postsController)
 
