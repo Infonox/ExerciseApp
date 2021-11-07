@@ -32,12 +32,13 @@ const routes = [
         path: '/workoutlog',
         name: 'Workoutlog',
         component: Workoutlog,
-        //meta: {requiresLogin: true}
+        meta: {requiresLogin: true}
       },
       {
         path: '/sharing',
         name: 'Sharing',
         component: Sharing,
+        meta: {requiresLogin: true}
       },
       {
         path: '/signup',
