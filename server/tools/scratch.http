@@ -91,4 +91,52 @@ Content-Type: application/json
 DELETE  http://localhost:8081/users/6197fd7a8e461b76b05216e5
 
 
+#############BELOW ARE TESTING THE NEW POSTS CONTROLLER SERVER REQUESTS#######
+POST http://localhost:8081/users/seed
+
+
+####################################################
+http://localhost:8081/posts
+
+
+###
+http://localhost:8081/posts/61980b0b2e5ec76253ccbc96
+
+###
+http://localhost:8081/posts/wall/@JewPaltz
+
+###
+http://localhost:8081/posts/feed/@JewPaltz
+
+###
+http://localhost:8081/posts/search?q=never
+
+###
+POST http://localhost:8081/posts
+Content-Type: application/json
+
+{
+    "src": "https://apod.nasa.gov/apod/image/2111/MilkyWayWaterfall_XieJie_960.jpg",
+    "alt": "A Waterfall and the Milky Way",
+    "caption": "A Waterfall and the Milky Way",
+    "user_handle": "@JewPaltz",
+    "isPublic": true
+}
+###
+PATCH http://localhost:8081/posts/61980b0b2e5ec76253ccbc96
+Content-Type: application/json
+
+{
+    "caption": "HENRY WAS HERE"
+}
+
+###
+DELETE  http://localhost:8081/posts/61980b0b2e5ec76253ccbc95
+
+###
+POST http://localhost:8081/posts/seed
+
+
+
+
 
