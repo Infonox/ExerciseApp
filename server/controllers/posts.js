@@ -9,26 +9,55 @@ const app = express.Router();
 app
 .get("/", (req, res, next)=>{
 
-    res.send(models.getAll());
+   models.getAll().then(x=>res.send(x)).catch(next);
     
 
 })
+.get("/wall/:handle", (req, res, next) =>{
+    models   .getWall(req.params.handle)
+            .then( x=> res.send(x) )
+            .catch(next)    
+})
+.get("/feed/:handle", (req, res, next) =>{
+    models   .getFeed(req.params.handle)
+            .then( x=> res.send(x) )
+            .catch(next)    
+})
 .get("/search", (req, res, next)=>{
-    res.send(models.Search(req.query.q));
+    models.Search(req.query.q).then(x=>res.send(x))
+    .catch(next)
 
 })
 .get("/:id", (req, res, next)=>{
-    console.log(req.headers);
-    res.send(models.Get(req.params.id));
+    models.Get(req.params.id).then(x=>res.send(x))
+    .catch(next)
 
     
 })
 .post("/",(req,res,next)=>{
+
+    models   .Add(req.body)
+    .then( x=> res.status(201).send(x) )
+    .catch(next)
   
     
   
-    const newPost = models.Add(req.body)
-    res.status(201).send(newPost);
+    
+})
+.patch("/:id", (req, res, next) =>{
+    models   .Update(req.params.id, req.body)
+            .then( x=> res.send(x) )
+            .catch(next) 
+})
+.delete("/:id", (req, res, next) =>{
+    models   .Delete(req.params.id)
+            .then( x=> res.send({ deleted: x }) )
+            .catch(next) 
+})
+.post("/seed", (req, res, next) =>{
+    models   .Seed()
+            .then( x=> res.status(201).send("Created") )
+            .catch(next)
 })
 
 
