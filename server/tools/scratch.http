@@ -87,5 +87,8 @@ Content-Type: application/json
     "firstName": "Jamala"
 }
 
+###
+DELETE  http://localhost:8081/users/6197fd7a8e461b76b05216e5
+
 
 
