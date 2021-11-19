@@ -5,11 +5,18 @@ const app = express.Router();
 
 
 app
-.get("/", (req, res, next)=>{
-    res.send(models.GetAll());
+.get("/", (req, res, next)=>{ //why change these functions for mongodb?
+    models.GetAll().then(user=>{
+        res.send(user);
+    })
+    .catch(next);
 
 }).get("/:user_id", (req, res, next)=>{
-    res.send(models.Get(req.params.user_id));
+    models.Get(req.params.user_id)
+    .then(user=>{
+        res.send(user);
+    })
+    .catch(next);
 
 })
 .post("/Login", (req,res,next) =>{
@@ -32,7 +39,14 @@ app
         
        
 
-    });
+ })
+.post("/seed", (req,res,next)=>{
+    models.Seed()
+    .then(user=>{
+        res.status(201).send("Created");
+    })
+    .catch(next)
+})
 
     
 

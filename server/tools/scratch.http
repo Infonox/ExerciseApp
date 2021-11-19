@@ -68,6 +68,14 @@ Content-Type: application/json
 
 
 ###
-http://localhost:3100/users/async
+http://localhost:8081/users/async
+
+###
+
+POST http://localhost:8081/users/seed
+
+
+POST http://localhost:8081/posts/seed
+
 
 
