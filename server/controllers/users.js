@@ -18,7 +18,17 @@ app
     })
     .catch(next);
 
+
+
 })
+.patch("/:user_id", (req, res, next) =>{
+
+    models   .Update(req.params.user_id, req.body)
+            .then( user=> res.send(user) )
+            .catch(next) 
+
+})
+
 .post("/Login", (req,res,next) =>{
      models.Login(req.body.handle, req.body.password)
         .then(user =>{

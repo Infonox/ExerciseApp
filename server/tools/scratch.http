@@ -73,9 +73,19 @@ http://localhost:8081/users/async
 ###
 
 POST http://localhost:8081/users/seed
-
+####
 
 POST http://localhost:8081/posts/seed
+
+
+
+###
+PATCH http://localhost:8081/users/6197fd7a8e461b76b05216e5
+Content-Type: application/json
+
+{
+    "firstName": "Jamala"
+}
 
 
 
