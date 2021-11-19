@@ -23,15 +23,18 @@ app
     
 })
 .post("/register", (req,res,next) =>{
-     const user=req.body;
-     models.Add(user, (err,user)=>{
-         if(err){
-             next(err); return;
-         }
-         res.status(201).send(user);
-     });
-   
+     models.Add(req.body)
+     .then(user => {
+        res.status(201).send(user);
 
-})
+     }).catch(next)
+
         
+       
+
+    });
+
+    
+
+
 module.exports = app;
