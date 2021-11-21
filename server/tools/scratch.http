@@ -87,7 +87,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE  http://localhost:8081/users/6197fd7a8e461b76b05216e5
+DELETE  http://localhost:8081/users/6199aacc4f3e7f31c52aa8a5
 
 
 #############BELOW ARE TESTING THE NEW POSTS CONTROLLER SERVER REQUESTS#######
@@ -102,10 +102,11 @@ http://localhost:8081/posts
 http://localhost:8081/posts/61980b0b2e5ec76253ccbc96
 
 ###
-http://localhost:8081/posts/wall/@JewPaltz
+http://localhost:8081/posts/wall/@vp
+
 
 ###
-http://localhost:8081/posts/feed/@JewPaltz
+http://localhost:8081/posts/feed/@vp
 
 ###
 http://localhost:8081/posts/search?q=never
