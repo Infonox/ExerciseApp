@@ -31,6 +31,7 @@ app
 .delete("/:user_id", (req, res, next) =>{
 
     models   .Delete(req.params.user_id)
+            // @ts-ignore
             .then( user=> res.send({ deleted: user }) )
             .catch(next) 
 
