@@ -19,7 +19,7 @@ app
             .catch(next)    
 })
 .get("/feed/:handle", (req, res, next) =>{
-    models   .getFeed(req.params.handle)
+    models   .GetFeed(req.params.handle)
             .then( x=> res.send(x) )
             .catch(next)    
 })
