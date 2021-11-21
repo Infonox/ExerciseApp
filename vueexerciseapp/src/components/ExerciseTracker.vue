@@ -43,63 +43,6 @@
         <button class="button" type="submit">Add</button>
       </form>
     </section>
-    <table class="table">
-      <thead>
-        <tr>
-          <th><abbr title="workoutNumber">Workout Number</abbr></th>
-          <th><abbr title="workoutName">Workout Name</abbr></th>
-          <th><abbr title="time">Time Spent</abbr></th>
-          <th><abbr title="Date:">Date</abbr></th>
-        </tr>
-      </thead>
-      <tfoot>
-        <tr>
-          <th><abbr title="workoutNumber">Workout Number</abbr></th>
-          <th><abbr title="workoutName">Workout Name</abbr></th>
-          <th><abbr title="time">Time Spent</abbr></th>
-          <th><abbr title="Date:">Date</abbr></th>
-        </tr>
-      </tfoot>
-      <tbody>
-        <tr>
-          <th>1</th>
-          <td>name</td>
-          <td>timespent</td>
-          <td>date</td>
-        </tr>
-        <tr>
-          <th>1</th>
-          <td>name</td>
-          <td>timespent</td>
-          <td>date</td>
-        </tr>
-        <tr>
-          <th>1</th>
-          <td>name</td>
-          <td>timespent</td>
-          <td>date</td>
-        </tr>
-        <tr class="is-selected">
-          <th>1</th>
-          <td>name</td>
-          <td>timespent</td>
-          <td>date</td>
-        </tr>
-        <tr>
-          <th>1</th>
-          <td>name</td>
-          <td>timespent</td>
-          <td>date</td>
-        </tr>
-        <tr>
-          <th>1</th>
-          <td>name</td>
-          <td>timespent</td>
-          <td>date</td>
-        </tr>
-        <tr></tr>
-      </tbody>
-    </table>
   </div>
 </template>
 

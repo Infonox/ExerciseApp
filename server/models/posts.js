@@ -1,4 +1,4 @@
-
+//how can we change GetWall to get the Wall just like we get the Feed?? I want to delete only things that are on myWall, not what is on Feed
 const { GetByHandle } = require("./users");
 //import { GetByHandle } from "./users";
 const Users = require("./users");
@@ -10,43 +10,51 @@ module.exports.collection = collection;
 
 const list = [
     {
-        src: "https://bulma.io/images/placeholders/1280x960.png",
-        alt: "Placeholder image",
-        caption: "Lorem Ipsom",
+        src: "https://upload.wikimedia.org/wikipedia/commons/0/06/GoldGymShibuyaEntrance.jpg",
+        alt: "Golds Gym Tokyo",
+        caption: "At golds gym in Tokyo!!",
         time: Date(),
-        user_handle: "@johnsmith",
+        user_handle: "@HenryM",
         isPublic: true,
     },
     {
-        src: "https://bulma.io/images/placeholders/1280x960.png",
-        alt: "Placeholder image",
-        caption: "We want Moshiach Now",
+        src: "https://upload.wikimedia.org/wikipedia/commons/6/61/Two_weight_training_benches.jpg",
+        alt: "Free Weights",
+        caption: "Free weights are my favorite way to workout!",
         time: Date(),
-        user_handle: "@vp",
+        user_handle: "@HenryM",
         isPublic: true,
     },
     {
-        src: "https://scontent-lga3-2.xx.fbcdn.net/v/t31.18172-8/p720x720/886090_10100137903372610_773365632_o.jpg?_nc_cat=101&ccb=1-5&_nc_sid=ba80b0&_nc_ohc=DWVdkKM2PwQAX_tAc5p&_nc_ht=scontent-lga3-2.xx&oh=d9d284fef84a57b1a824932d5fd2da20&oe=618A0203",
-        alt: "Purim in SUB #100",
-        caption: "What a purim to remember",
+        src: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Arnold_Schwarzenegger_%2833730956438%29.jpg",
+        alt: "Governer Arnold",
+        caption: "Ello Gov'Na!",
         time: Date(),
-        user_handle: "@JewPaltz",
+        user_handle: "@bodybuilder",
         isPublic: true,
     },
     {
-        src: "https://scontent-lga3-2.xx.fbcdn.net/v/t1.6435-9/s600x600/244029201_10167312248050347_4050463819121596219_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=oaf-csovSFEAX-I2hxQ&_nc_ht=scontent-lga3-2.xx&oh=8466fcd68032477fab99306ba1a6e800&oe=61895C64",
-        alt: "Mug with slogan",
-        caption: "Never be afraid to try something new. The ark was built by amateurs and the Titanic by professionals",
+        src: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Construction_Truck.jpg",
+        alt: "Arnolds Workout",
+        caption: "I only lift Tractor Trailers when I workout!",
         time: Date(),
-        user_handle: "@JewPaltz",
+        user_handle: "@bodybuilder",
         isPublic: true,
     },
     {
-        src: "https://scontent-lga3-2.xx.fbcdn.net/v/t1.6435-9/p180x540/242759506_10102663165018030_5506732176336636339_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=730e14&_nc_ohc=LJFWaOTJXvUAX-skiU3&_nc_ht=scontent-lga3-2.xx&oh=e6a03799ccf969c3b3fe62a7b266b8b9&oe=618C38F8",
-        alt: "The family",
-        caption: "The whole family. All the kids hiking together. Sukkot Vacation.",
+        src: "https://upload.wikimedia.org/wikipedia/commons/9/95/Exercise_Treadmill_Convey_Motion.jpg",
+        alt: "Tyson's cardio",
+        caption: "Always gotta keep that cardio up!!!",
         time: Date(),
-        user_handle: "@JewPaltz",
+        user_handle: "@boxer",
+        isPublic: true,
+    },
+    {
+        src: "https://scontent-lga3-2.xx.fbcdn.net/v/t1.6435-9/p180x540/242759506_10102663165018030_5506732176336636339_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=730e14&_nc_ohc=LJFWaOTJXvUAX-skiU3&_nc_ht=scontent-lga3-2.xx&oh=e6a03799ccf969c3b3fe62a7b266b8b9&oe=618C38F8https://upload.wikimedia.org/wikipedia/commons/c/cb/BagGloves.JPG",
+        alt: "Tyson's gloves",
+        caption: "My favorite pair of boxing gloves!",
+        time: Date(),
+        user_handle: "@boxer",
         isPublic: true,
     },
 ];
@@ -64,6 +72,7 @@ const addOwnerPipeline = [
     { $project: { "owner.password": 0 } }
 ];
 
+
 module.exports.getAll = function GetAll() {
     return collection.aggregate(addOwnerPipeline).toArray();
 }
@@ -71,6 +80,8 @@ module.exports.getAll = function GetAll() {
 module.exports.getWall = function GetWall(handle) {
     return collection.aggregate(addOwnerPipeline).match({ user_handle: handle }).toArray();
 }
+
+
 
 //convert to mongo
 //this is the sql way
@@ -97,6 +108,9 @@ module.exports.getFeed_ = function GetFeed_(handle) {
 module.exports.GetFeed = async function (handle) {
     //  The "MongoDB" way to do things. (Should test with a large `following` array)
     const user = await Users.collection.findOne({ handle });
+    if(!user){
+        throw { code: 404, msg: 'No such user'};
+    }
     const targets = user.following.filter(x => x.isApproved).map(x => x.handle).concat(handle)
     const query = collection.aggregate([
         { $match: { user_handle: { $in: targets } } },

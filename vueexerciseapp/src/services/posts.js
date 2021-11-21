@@ -27,5 +27,5 @@ export function Update(post_id, post) {
 }
 export function Delete(post_id) {
    
-    return post_id;
+    return api('posts/' + post_id, {}, 'DELETE');
 }  

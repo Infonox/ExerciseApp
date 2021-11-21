@@ -106,7 +106,7 @@ http://localhost:8081/posts/wall/@vp
 
 
 ###
-http://localhost:8081/posts/feed/@vp
+http://localhost:8081/posts/feed/@HenryM
 
 ###
 http://localhost:8081/posts/search?q=never
