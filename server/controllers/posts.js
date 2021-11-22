@@ -14,7 +14,7 @@ app
 
 })
 .get("/wall/:handle", (req, res, next) =>{
-    models   .getWall(req.params.handle)
+    models   .GetWall(req.params.handle)
             .then( x=> res.send(x) )
             .catch(next)    
 })
