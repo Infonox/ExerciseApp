@@ -11,10 +11,8 @@ export async function api(url, data = null, method = null){
                 method: method ?? 'POST', // *GET, POST, PUT, DELETE, etc.
                 cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
                 headers: {
-                  'Content-Type': 'application/json',
-                  'Host': 'https://exerciseappnode.herokuapp.com/',
+                  'Content-Type': 'application/json'
                 },
-          
                 body: JSON.stringify(data) // body data type must match "Content-Type" header
               });
         }else{
