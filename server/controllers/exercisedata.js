@@ -11,6 +11,11 @@ app
      
  
  })
+ .delete("/:id", (req, res, next) =>{
+    models   .Delete(req.params.id)
+            .then( x=> res.send({ deleted: x }) )
+            .catch(next) 
+})
 
  .get("/feed/:handle", (req, res, next) =>{
      models   .GetFeed(req.params.handle)

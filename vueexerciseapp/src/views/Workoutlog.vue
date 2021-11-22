@@ -1,48 +1,44 @@
 <template>
-  <div>
-    <section class="hero is-danger">
-      <div class="hero-body">
-        <p class="title">
-          Workout Log
-          <i class="fas fa-clipboard fa-2x"></i>
-        </p>
-
-        <p class="subtitle">Record your Exercise data!</p>
+  <div class="section">
+    <div class="columns">
+      <div class="column is-one-third is-offset-one-third">
+        <div class="workouts" v-for="(p, i) in workouts" :key="p.src">
+          <exercise-tracker :workouts="p" @remove="remove(p, i)" />
+        </div>
       </div>
-    </section>
- 
-
-    <ExerciseTracker/>
     </div>
-
-  
+  </div>
 </template>
 
 <script>
-import ExerciseTracker from "../components/ExerciseTracker.vue";
+import ExerciseTracker from '../components/ExerciseTracker.vue';
+import session from "../services/session";
+import { Delete, GetFeed } from "../services/exercisedata";
 export default {
+  components: { ExerciseTracker },
+    data: ()=> ({
+     workouts:[]
+    }),
+    async mounted(){
+        this.workouts = await GetFeed(session.user.handle)
+    },
+    methods: {
+        async remove(workouts, i){
+            console.log({workouts})
+            const response = await Delete(workouts._id)
+            if(response.deleted){
+                this.workouts.splice(i, 1)
+            }
+        }
+    }
+}
 
-  data:()=> ({
-
-    workoutNumber: null,
-    workoutName: null,
-    workoutDate: null,
-    timeSpent: null,
-   
-
-
-  }),
-  components:{
-
-    ExerciseTracker,
-
-  },
-};
 </script>
+
 
 <style>
 @import url(https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Amatic+SC&family=Roboto+Condensed:wght@300&display=swap);
 @import url("../assets/styles.css");
-</style>
+</style> 

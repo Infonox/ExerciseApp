@@ -95,6 +95,10 @@ module.exports.GetFeed = async function (handle) {
     ].concat(addOwnerPipeline));
     return query.toArray();
 }
+module.exports.Delete = async function Delete(workouts_id) {
+    const results = await collection.findOneAndDelete({ _id: new ObjectId(workouts_id) })
+    return results.value;
+}
 
 
 module.exports.Seed = async () => {

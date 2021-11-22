@@ -1,72 +1,51 @@
 <template>
-  <div class="container">
-    <section>
-      <form id="Form">
-        <div class="field">
-          <br />
-          <h2 class="title">New Workout</h2>
+  <div class="columns" style="width:500px;" >
+   
+      
+        
+      <div class="card column">
+        <div class="card-image">
+          <figure>
+            <button class="delete" @click="$emit('remove')"></button>
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left"></div>
+            <div class="media-content">
+              <p class="title is-4">
+                {{ workouts.user.firstName }} {{ workouts.user.lastName }}
+              </p>
+              <p class="subtitle is-6">{{ workouts.user.handle }}</p>
+            </div>
+          </div>
 
-          <label class="label">Time:</label>
-          <input
-            class="control"
-            type="text"
-            id="Time"
-            name="Time"
-            placeholder="Time spent"
-            pattern="[0-9]{1,2}"
-            autofocus
-          />
+          <div class="content">
+            {{ workouts.time }}
+            {{ workouts.action }}
+            {{ workouts.date }}
+            <br />
+            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+          </div>
         </div>
-        <div class="field">
-          <label class="label">Action:</label>
-          <select class="control" id="Type" name="Type" required>
-            <option value=""></option>
-            <option>Run</option>
-            <option>Swimming</option>
-            <option>Bike</option>
-            <option>Drink</option>
-            <option>Eat</option>
-            <option>Crossfit</option>
-            <option>Yoga</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="Date" class="label">Date:</label>
-          <input
-            class="control"
-            type="text"
-            id="Date"
-            name="Date"
-            placeholder="mm/dd/yyyy"
-          />
-        </div>
-        <button class="button" type="submit">Add</button>
-      </form>
-    </section>
-  </div>
+        <footer class="card-footer"></footer>
+      </div>
+    </div>
+
 </template>
 
 <script>
 export default {
-  data:()=>({
-    name: "", //attributes for fitness data that will be in our table
-    timeSpent: "",
-    date: "",
-    OurFitnessData: [], //array that holds the fitness data
-    Edit: true,  //when we want to edit whats in our table
-    Update: false,
-    Mode: "Submit",
-    Validation: 0,
-    WorkoutId: 1,
-  })
-}
-  
-     
+  props: {
+    workouts: Object,
+  },
+};
 </script>
 
 <style>
-@import url(https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Amatic+SC&family=Roboto+Condensed:wght@300&display=swap);
-@import url("../assets/styles.css");
+button.delete {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
 </style>
