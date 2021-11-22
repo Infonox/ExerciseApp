@@ -7,7 +7,7 @@
           <i class="fas fa-running fa-2x fa-spin"></i>
         </p>
 
-        <p class="subtitle">Create a profile below!</p>
+        <p class="subtitle">Please Login Below!</p>
       </div>
     </section>
     <br />
@@ -63,7 +63,7 @@
         <div class="column">
             <form class="section" @submit.prevent="login()">
             <div class="field">
-                Enter (admin,admin) for testing
+         
                 <label class="label">Enter email address:</label>
                 <div class="control form">
                     <input class="input" name="email" type="text" placeholder="Enter username" v-model="email">
