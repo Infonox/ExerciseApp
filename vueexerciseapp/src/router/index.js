@@ -26,7 +26,7 @@ const routes = [
         path: '/feed',
         name: 'Feed',
         component: Feed,
-        meta: { requiresLogin: true } //keeping this false for now to test profile data
+        meta: { requiresLogin: true } 
       },
       {
         path: '/workoutlog',
