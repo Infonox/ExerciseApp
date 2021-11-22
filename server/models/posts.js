@@ -77,9 +77,24 @@ module.exports.getAll = function GetAll() {
     return collection.aggregate(addOwnerPipeline).toArray();
 }
 
-module.exports.getWall = function GetWall(handle) {
+module.exports.getWall_ = function GetWall_(handle) {
     return collection.aggregate(addOwnerPipeline).match({ user_handle: handle }).toArray();
 }
+module.exports.GetWall = async function (handle) {
+    //  The "MongoDB" way to do things. (Should test with a large `following` array)
+    const user = await Users.collection.findOne({ handle });
+    if(!user){
+        throw { code: 404, msg: 'No such user'};
+    }
+    const targets = user.following.filter(x => x.handle).map(x => x.handle).concat(handle)
+    const query = collection.aggregate([
+        { $match: { user_handle: { $in: targets } } },
+    // @ts-ignore
+    ].concat(addOwnerPipeline));
+    return query.toArray();
+
+}
+
 
 
 
