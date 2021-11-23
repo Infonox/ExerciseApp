@@ -1,6 +1,9 @@
 import router from "../router";
-import { Add, Login } from "./users";
+import { Add, GetAll, Login } from "./users";
 import { NotificationProgrammatic } from "@oruga-ui/oruga-next/dist/esm/notification";
+
+
+
 
 
 const session = {
@@ -8,6 +11,8 @@ const session = {
     messages: [],
     toRoute: '/feed',
     regConfirm: false,
+    NoSameUsers: "Sorry, already a user with that handle, please enter a different one!",
+    CheckForSameUsers: false,
    
     async Login(handle, password) {
 
@@ -36,8 +41,23 @@ const session = {
 
     },
     async Register(user) {
+       try{
+        let listofusers = await(GetAll());
+        console.log(listofusers);
+        for (var i of listofusers) {
+            if(i.handle == user.handle){
+                this.CheckForSameUsers=true;
+                return Promise.reject( { code: 422, msg: "Sorry, already a user with that handle! enter a different one" } )
+         }
+        }
+        
+    
+        
+    
+        
+        
+       
 
-        try {
             const response = await Add(user);
 
             this.user = response.user;

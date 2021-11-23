@@ -23,6 +23,7 @@
               type="text"
               placeholder="Enter First Name"
               v-model="User.firstName"
+              required
             />
           </div>
 
@@ -63,14 +64,19 @@
             />
           </div>
         </div>
+         </div>
+           <div v-if="Session.CheckForSameUsers" style="font-family: Garamond, serif; font-size:35px; font-weight:bold;">
+      {{Session.NoSameUsers}}
+  </div>
         <div class="control">
           <button class="button is-link title" style="height: 50px" action="submit">
             Create Account
           </button>
         </div>
-      </div>
+       
     </form>
-  </div>
+ 
+</div>
 </template>
 
 <script>
@@ -97,7 +103,13 @@ export default {
          
 
         }
-    }
+    },
+      mounted() {
+   Session.CheckForSameUsers= false;
+},
+updated() {
+   console.log(this.$route)
+}
 }
                
 
