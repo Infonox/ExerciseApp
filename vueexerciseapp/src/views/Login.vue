@@ -1,7 +1,12 @@
 <template>
 
 <div>
+  <h1 v-if="Session.regConfirm" style="font-family: Garamond, serif; font-size:35px; font-weight:bold;">
+      User registered successfully <br>
+      please Login below!
 
+  </h1>
+ 
     <section class="hero" style="background-color: lightskyblue">
         <div class="hero-body">
             <p class="title ">
@@ -56,13 +61,22 @@ export default {
     data: ()=>({
         email: null,
         password: null,
-        Session
+        Session,
+        
+         regConfirm: false,
     }),
     methods: {
         login(){
             this.Session.Login(this.email, this.password);
         }
-    }
+    },
+
+   mounted() {
+   Session.regConfirm = false;
+},
+updated() {
+   console.log(this.$route)
+}
 }
 </script>
 

@@ -75,27 +75,32 @@
 
 <script>
 
-import { Add } from "../services/users";
-import router from "../router";
+
+
 import Session from "../services/session"
+
 
 export default {
     data: ()=>({
         User: {firstName:'', lastName: '', handle:'', password:''},
-    
-  
+        Session
+       
     }),
     methods: {
-        register(){
+       register(){
           let newUser ={
             firstName: this.User.firstName, lastName: this.User.lastName, handle: this.User.handle, password: this.User.password
+          
           }
-          console.log(newUser)
-            Add(newUser);
-            router.push(Session.toRoute);
+          console.log(newUser);
+          this.Session.Register(newUser);
+         
+
         }
     }
 }
+               
+
 </script>
 
 <style>
