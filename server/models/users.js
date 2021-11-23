@@ -56,9 +56,12 @@ module.exports.Get = user_id => collection.findOne({_id: new ObjectId(user_id)})
 module.exports.GetByHandle = (handle) => collection.findOne({ handle }).then(x=> ({ ...x, password: undefined }));
 
 module.exports.Add = async function Add(user) {
+
+    
     if(!user.firstName){
-         return Promise.reject( { code: 422, msg: "First Name is required" } )
+        return Promise.reject( { code: 422, msg: "First Name is required" } )
     }
+    
 
     const hash = await bcrypt.hash(user.password, +process.env.SALT_ROUNDS)
     
