@@ -12,16 +12,30 @@
     </section>
     <br />
 
-    <div class="container">
+    <form class="container"  @submit.prevent="register()">
       <div class="column">
         <div class="field">
-          <label class="label">Email</label>
+          <label class="label">First Name</label>
           <div class="control">
             <input
               class="input"
-              name="fullname"
-              type="email"
-              placeholder="Enter email"
+              name="firstName"
+              type="text"
+              placeholder="Enter First Name"
+              v-model="User.firstName"
+            />
+          </div>
+
+        </div>
+        <div class="field">
+          <label class="label">Last Name</label>
+          <div class="control">
+            <input
+              class="input"
+              name="lastName"
+              type="text"
+              placeholder="Enter First Name"
+              v-model="User.lastName"
             />
           </div>
         </div>
@@ -30,9 +44,10 @@
           <div class="control">
             <input
               class="input"
-              name="fullname"
+              name="handle"
               type="text"
               placeholder="Enter a username"
+              v-model="User.handle"
             />
           </div>
         </div>
@@ -41,24 +56,46 @@
           <div class="control">
             <input
               class="input"
-              name="age"
+              name="password"
               type="password"
               placeholder="Enter a password"
+              v-model="User.password"
             />
           </div>
         </div>
         <div class="control">
-          <button class="button is-link title" style="height: 50px">
+          <button class="button is-link title" style="height: 50px" action="submit">
             Create Account
           </button>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 </template>
 
 <script>
-export default {};
+
+import { Add } from "../services/users";
+import router from "../router";
+import Session from "../services/session"
+
+export default {
+    data: ()=>({
+        User: {firstName:'', lastName: '', handle:'', password:''},
+    
+  
+    }),
+    methods: {
+        register(){
+          let newUser ={
+            firstName: this.User.firstName, lastName: this.User.lastName, handle: this.User.handle, password: this.User.password
+          }
+          console.log(newUser)
+            Add(newUser);
+            router.push(Session.toRoute);
+        }
+    }
+}
 </script>
 
 <style>

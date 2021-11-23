@@ -102,7 +102,7 @@ http://localhost:8081/posts
 http://localhost:8081/posts/61980b0b2e5ec76253ccbc96
 
 ### FIX GET WALL
-http://localhost:8081/posts/wall/@vp 
+http://localhost:8081/posts/wall/@HenryM
 
 
 ###

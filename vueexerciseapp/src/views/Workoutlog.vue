@@ -1,12 +1,14 @@
 <template>
   <div class="section">
     <div class="columns">
-      <div class="column is-one-third is-offset-one-third">
+      <div class="column">
         <div class="workouts" v-for="(p, i) in workouts" :key="p.src">
           <exercise-tracker :workouts="p" @remove="remove(p, i)" />
         </div>
       </div>
+      <div class="column"></div>
     </div>
+    
   </div>
 </template>
 

@@ -1,36 +1,37 @@
 <template>
-  <div class="columns" style="width:500px;" >
+  
    
       
-        
-      <div class="card column">
-        <div class="card-image">
-          <figure>
-            <button class="delete" @click="$emit('remove')"></button>
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="media">
-            <div class="media-left"></div>
-            <div class="media-content">
-              <p class="title is-4">
+<article class="message is-primary">
+  <div class="message-header">
+     <p class="title is-4">
                 {{ workouts.user.firstName }} {{ workouts.user.lastName }}
               </p>
-              <p class="subtitle is-6">{{ workouts.user.handle }}</p>
-            </div>
-          </div>
+              <br>
+                <p class="subtitle is-6">{{ workouts.user.handle }}</p>
+    <button class="delete" @click ="$emit('remove')" aria-label="delete"></button>
+  </div>
+  <div class="message-body">
+    <ul>
+      <h2> Time Spent: </h2>
+  <li>{{ workouts.time }}</li>
+  <br>
+  <li>
+    <h2> Workout Done: </h2>
 
-          <div class="content">
-            {{ workouts.time }}
-            {{ workouts.action }}
-            {{ workouts.date }}
-            <br />
-            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-          </div>
-        </div>
-        <footer class="card-footer"></footer>
-      </div>
-    </div>
+            {{ workouts.action }}</li>
+            <br>
+  <li>
+    <h2> Date:</h2>
+    {{ workouts.date }}</li>
+</ul>  
+<time datetime="post.time">{{prettyDate}}</time>
+     
+            
+  </div>
+</article>
+        
+      
 
 </template>
 
@@ -39,6 +40,18 @@ export default {
   props: {
     workouts: Object,
   },
+   prettyDate(){
+        if(this.post.time){
+
+          return new Date(this.post.time).toDateString()
+        
+
+        }else{
+          return 'Never'
+        }
+       
+      }
+    
 };
 </script>
 

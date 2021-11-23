@@ -1,43 +1,59 @@
 <template>
   <div class="section">
-      <h1 class="title"> Feed Page </h1>
       
+      <section>
       <div class="columns">
 
-          <!--
-          <div class="column">
+  
+
+          
+         <!--- <div class="column">
               <div class="card">
                   <div class="card-content">
                       {{newPost}}
                   </div>
               </div>
-          </div>
-            -->
-        <div class="column is-half is-offset-one-quarter">
+          </div> --->
+           
+        <div class="column" style="border-style:groove;">
+          <h1 class="title"> Create a new post! </h1>
 
             <post-edit :new-post="newPost" @add="add()" />
 
-            <div class="post" v-for=" (p, i) in posts" :key="p.src">
-                <post :post="p" @remove="remove(p, i)" />
-            </div>
-
+           
         </div>
 
-        <div class="column">
-            <post :post="newPost" />
+        <div class="column" style="border-style:groove;">
+           <h1 class="title"> New post preview: </h1>
+           <post :post="newPost" />
         </div>
       </div>
+      </section>
+      <div class="section" style="width:100ex;margin:auto;">
+     
+     <div class>
+       <div class="post column" style="border-style:double;alignment:center;" v-for=" (p, i) in posts" :key="p.src">
+                <post :post="p" @remove="remove(p, i)" />
+            </div>
+            
+        
+      </div>
+      
+          
+
+        </div>
+
 
 
   </div>
 </template>
 
 <script>
-import Post from '../components/Posts.vue';
+import Post from '../components/Post.vue';
 import session from "../services/session";
 import { Add, Delete, GetFeed } from "../services/posts";
 import PostEdit from "../components/Postedit.vue";
-const newPost = ()=> ({ user: session.user, user_handle: session.user.handle })
+const newPost = ()=> ({ user: session.user, user_handle: session.user.handle, pic: session.user.pic })
 export default {
     components: {
         Post,
@@ -64,6 +80,8 @@ export default {
             console.log({ response });
             if(response){
                 this.posts.unshift(response);
+                
+                session.user.pic = this.posts.pic;
                 this.newPost = newPost();
             }
         }
