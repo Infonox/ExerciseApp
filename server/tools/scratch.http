@@ -6,6 +6,8 @@ http://localhost:8081/users/1
 
 ###
 http://localhost:8081/posts
+###
+http://localhost:8081/workouts
 
 
 ###
@@ -136,7 +138,9 @@ DELETE  http://localhost:8081/posts/61980b0b2e5ec76253ccbc95
 ###
 POST http://localhost:8081/posts/seed
 ###
-POST http://localhost:8081/exercisedata/seed
+POST http://localhost:8081/workouts/seed
+###
+ http://localhost:8081/exercisedata/feed/@HenryM
 
 
 
