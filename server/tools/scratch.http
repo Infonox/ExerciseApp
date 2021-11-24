@@ -142,6 +142,12 @@ POST http://localhost:8081/workouts/seed
 ###
  http://localhost:8081/exercisedata/feed/@HenryM
 
+###
+
+ ###
+ POST http://localhost:8081/profiles/seed
+
+
 
 
 
