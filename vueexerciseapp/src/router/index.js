@@ -10,7 +10,6 @@ import Session from '../services/session';
 import Home from '../views/Home.vue';
 import Feed from '../views/Feed.vue';
 import Workoutlog from '../views/Workoutlog.vue';
-import Sharing from '../views/Sharing.vue';
 import Signup from '../views/Signup.vue';
 import Contact from '../views/Contact.vue';
 import Profile from '../views/Profile.vue';
@@ -32,12 +31,6 @@ const routes = [
         path: '/workoutlog',
         name: 'Workoutlog',
         component: Workoutlog,
-        meta: {requiresLogin: true}
-      },
-      {
-        path: '/sharing',
-        name: 'Sharing',
-        component: Sharing,
         meta: {requiresLogin: true}
       },
       {

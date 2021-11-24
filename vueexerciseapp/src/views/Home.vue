@@ -23,7 +23,7 @@
           "
         />
       </div>
-      <div class="column">
+      <div class="column" style="font-family:cursiv;e">
         ¨The only person you are destined to become is the person you decide to
         be.¨ – Ralph Waldo Emerson
       </div>
@@ -38,7 +38,7 @@
           "
         />
       </div>
-      <div class="column">
+      <div class="column" style="font-family:cursiv;e">
         “The last three or four reps is what makes the muscle grow. This area of
         pain divides a champion from someone who is not a champion.”- Arnold
         Schwarzenegger
@@ -54,7 +54,7 @@
           "
         />
       </div>
-      <div class="column">
+      <div class="column" style="font-family:cursiv;e">
         ¨Most people fail, not because of lack of desire, but, because of lack
         of commitment.¨ – Vince Lombardi
       </div>

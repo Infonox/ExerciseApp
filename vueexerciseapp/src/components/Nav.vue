@@ -71,14 +71,7 @@
         >
           Profile
         </router-link>
-        <router-link
-          class="navbar-item is-tab"
-          to="/sharing"
-          active-class="is-active"
-          exact
-        >
-          Sharing
-        </router-link>
+     
 
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link"> More </a>

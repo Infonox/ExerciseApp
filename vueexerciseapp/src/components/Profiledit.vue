@@ -5,31 +5,38 @@
                 <div class="field">
                     <label class="label">Picture</label>
                     <div class="control">
-                        <input class="input" type="url" placeholder="Input a URL to a picture" v-model="post.src" />
+                        <input class="input" type="url" placeholder="Input a URL to profile picture" v-model="profile.src" />
                     </div>
                 </div>
-                <div class="field">
-                    <label class="label">Alt</label>
-                    <div class="control">
-                        <input class="input" type="text" placeholder="Some alternate text for this picture" v-model="post.alt" />
-                    </div>
-                </div>
+                
 
                 <div class="field">
-                    <label class="label">Caption</label>
+                    <label class="label">Description</label>
                     <div class="control">
-                        <textarea class="textarea" placeholder="Some text to explain this picture" v-model="post.caption"></textarea>
+                        <textarea class="textarea" placeholder="Put your description here!" v-model="profile.description"></textarea>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Age</label>
+                    <div class="control">
+                        <input class="input" type="number" placeholder="How old are you?" v-model="profile.age"/>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Weight</label>
+                    <div class="control">
+                        <input class="input" type="number" placeholder="How much do you weigh?" v-model="profile.weight"/>
                     </div>
                 </div>
 
                 <div class="field">
                     <div class="control">
                         <label class="radio">
-                            <input type="radio" name="question" v-model="post.isPublic" :value="true" />
+                            <input type="radio" name="question" v-model="profile.isPublic" :value="true" />
                             Public
                         </label>
                         <label class="radio">
-                            <input type="radio" name="question" v-model="post.isPublic" :value="false" />
+                            <input type="radio" name="question" v-model="profile.isPublic" :value="false" />
                             Private
                         </label>
                     </div>
@@ -48,20 +55,20 @@
 <script>
 export default {
     props: {
-        newPost: Object
+        newProfileData: Object
     },
     data(){
         return {
-            post: this.newPost
+            profile: this.newProfileData
         }
     },
     watch: {
         newPost(){
-            this.post = this.newPost;
+            this.profile = this.newProfileData;
         }
     }
 }
 </script>
 
 <style>
-</style>
+</style> 

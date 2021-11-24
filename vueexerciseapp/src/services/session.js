@@ -1,4 +1,5 @@
 import router from "../router";
+import {  AddData } from "./profiles";
 import { Add, GetAll, Login } from "./users";
 import { NotificationProgrammatic } from "@oruga-ui/oruga-next/dist/esm/notification";
 
@@ -7,13 +8,19 @@ import { NotificationProgrammatic } from "@oruga-ui/oruga-next/dist/esm/notifica
 
 
 const session = {
+    profile: null,
     user: null,
     messages: [],
     toRoute: '/feed',
     regConfirm: false,
     NoSameUsers: "Sorry, already a user with that handle, please enter a different one!",
     CheckForSameUsers: false,
-   
+
+    async AddProfileData(data){
+        const response = await AddData(data);
+        this.user = response.user;
+
+    },
     async Login(handle, password) {
 
         try {

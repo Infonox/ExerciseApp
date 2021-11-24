@@ -41,9 +41,9 @@ export default {
     workouts: Object,
   },
    prettyDate(){
-        if(this.post.time){
+        if(this.workouts.time){
 
-          return new Date(this.post.time).toDateString()
+          return new Date(this.workouts.time).toDateString()
         
 
         }else{

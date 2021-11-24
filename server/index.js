@@ -8,6 +8,7 @@ console.log(`The best class in New Paltz is ${process.env.BEST_CLASS}`)
 const usersController = require('./controllers/users');
 const postsController = require('./controllers/posts');
 const exerciseDataController = require('./controllers/workouts');
+const profilesController = require('./controllers/profiles')
 
 
 const app = express();
@@ -30,6 +31,7 @@ app
 .use('/users', usersController)
 .use('/posts', postsController)
 .use('/workouts', exerciseDataController)
+.use('/profiles', profilesController)
 
 app
 .get('*',(req,res) => res.sendFile(path.join(__dirname, '../docs/index.html')))

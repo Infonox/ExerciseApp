@@ -37,7 +37,8 @@
 <script>
 export default {
     props: {
-        post: Object
+        post: Object,
+       
     },
      computed: {
       prettyDate(){
@@ -47,7 +48,7 @@ export default {
         
 
         }else{
-          return 'Never'
+          return ''
         }
        
       }
