@@ -25,7 +25,7 @@
             <form class="section" @submit.prevent="login()">
             <div class="field">
 
-                <label class="label">Enter email address:</label>
+                <label class="label">Enter Username:</label>
                 <div class="control form">
                     <input class="input" name="email" type="text" placeholder="Enter username" v-model="email">
                 </div>
