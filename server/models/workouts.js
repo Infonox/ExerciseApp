@@ -70,14 +70,14 @@ module.exports.getAll = function GetAll() {
     return collection.aggregate(addOwnerPipeline).toArray();
 }
 
-module.exports.Add = async function Add(workouts) {
-    if (!workouts.user_handle) {
+module.exports.Add = async function Add(workout) {
+    if (!workout.user_handle) {
         throw { code: 422, msg: "Workouts must have an Owner" }
     }
   
-    const response = await collection.insertOne(workouts);
-  workouts.id = response.insertedId;
-    return { ...workouts };
+    const response = await collection.insertOne(workout);
+  workout.id = response.insertedId;
+    return { ...workout };
 }
 
 

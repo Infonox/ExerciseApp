@@ -6,7 +6,11 @@
           <exercise-tracker :workouts="p" @remove="remove(p, i)" />
         </div>
       </div>
-      <div class="column"></div>
+      <div class="column">
+       <div>
+                <workoutedit :new-workout="newWorkout" @add="add()"/>
+            </div>
+      </div>
     </div>
     
   </div>
@@ -15,21 +19,36 @@
 <script>
 import ExerciseTracker from '../components/ExerciseTracker.vue';
 import session from "../services/session";
-import { Delete, GetFeed } from "../services/exercisedata";
+import { Delete, GetFeed, Add } from "../services/exercisedata";
+import Workoutedit from "../components/Workoutedit.vue"
+const newWorkout = ()=> ({ user: session.user, user_handle: session.user.handle })
 export default {
-  components: { ExerciseTracker },
+  components: { ExerciseTracker,
+  Workoutedit },
     data: ()=> ({
-     workouts:[]
+     workouts:[],
+     newWorkout: newWorkout()
     }),
     async mounted(){
         this.workouts = await GetFeed(session.user.handle)
     },
     methods: {
-        async remove(workouts, i){
-            console.log({workouts})
-            const response = await Delete(workouts._id)
+        async remove(workout, i){
+            console.log({workout})
+            const response = await Delete(workout._id)
             if(response.deleted){
                 this.workouts.splice(i, 1)
+            }
+        },
+         async add(){
+            console.log("Adding new workout at " + new Date())
+            const response = await Add(this.newWorkout);
+            console.log({ response });
+            if(response){
+                this.workouts.unshift(response);
+                
+        
+                this.newWorkout = newWorkout();
             }
         }
     }
