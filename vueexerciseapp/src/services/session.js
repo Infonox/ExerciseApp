@@ -1,5 +1,5 @@
 import router from "../router";
-import {  AddData } from "./profiles";
+import {  AddData, Get, GetAll2 } from "./profiles";
 import { Add, GetAll, Login } from "./users";
 import { NotificationProgrammatic } from "@oruga-ui/oruga-next/dist/esm/notification";
 
@@ -7,7 +7,9 @@ import { NotificationProgrammatic } from "@oruga-ui/oruga-next/dist/esm/notifica
 
 
 
+
 const session = {
+    checkData: false,
     profile: null,
     user: null,
     messages: [],
@@ -15,11 +17,31 @@ const session = {
     regConfirm: false,
     NoSameUsers: "Sorry, already a user with that handle, please enter a different one!",
     CheckForSameUsers: false,
+    handle: null,
 
     async AddProfileData(data){
         const response = await AddData(data);
+        const user = await GetAll()
+        for(var i of user){
+
+            if(i.handle == data.handle)
+            this.handle = i.handle;
+
+        }
         this.user = response.user;
 
+    },
+    async GetProfileData(){
+        const Profiles = await GetAll2()
+
+        if( Profiles.user_handle == this.user.handle)
+        {
+
+           const getData = await Get(Profiles._id)
+           return getData;
+
+
+        }
     },
     async Login(handle, password) {
 
