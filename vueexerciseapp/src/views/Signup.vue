@@ -15,6 +15,20 @@
     <form class="container"  @submit.prevent="register()">
       <div class="column">
         <div class="field">
+          <label class="label">Email Address:</label>
+          <div class="control">
+            <input
+              class="input"
+              name="email"
+              type="email"
+              placeholder="Enter An Email Address"
+              v-model="email"
+              required
+            />
+          </div>
+
+        </div>
+        <div class="field">
           <label class="label">First Name</label>
           <div class="control">
             <input
@@ -88,14 +102,17 @@ import Session from "../services/session"
 
 export default {
     data: ()=>({
-        User: {firstName:'', lastName: '', handle:'', password:''},
+        User: {firstName:'', lastName: '', handle:'', password:'', isAdmin:'', emails:[], following:[]},
+        email:'',
         Session
        
     }),
     methods: {
        register(){
+         this.User.emails.push(this.email);
+         this.User.following.push({handle:'@bodybuilder', isApproved: true }, { handle: '@boxer', isApproved: true },{ handle: '@HenryM', isApproved: true });
           let newUser ={
-            firstName: this.User.firstName, lastName: this.User.lastName, handle: this.User.handle, password: this.User.password
+            firstName: this.User.firstName, lastName: this.User.lastName, handle: this.User.handle, password: this.User.password, isAdmin: false, emails: this.User.emails, following: this.User.following
           
           }
           console.log(newUser);

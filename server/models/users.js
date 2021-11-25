@@ -18,7 +18,7 @@ const list = [
         emails: [
             "maldonah2@newpaltz.edu"
         ],
-        following: [ { handle: '@bodybuilder', isApproved: true }, { handle: '@yummyears', isApproved: true }, ],
+        following: [ { handle: '@bodybuilder', isApproved: true }, { handle: '@boxer', isApproved: true }, ],
         get name(){ return this.firstName + ' ' + this.lastName },
     },
     {
@@ -31,7 +31,7 @@ const list = [
         emails: [
             "arnolds@gmail.com"
         ],
-        following: [{ handle: '@yummyears', isApproved: true },],
+        following: [{ handle: '@boxer', isApproved: true },],
     },
     {
         firstName: 'Mike',
