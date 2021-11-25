@@ -1,16 +1,17 @@
 <template>
   <div class="section">
     <div class="columns">
+       <div class="column">
+       <div>
+                <workoutedit :new-workout="newWorkout" @add="add()"/>
+            </div>
+      </div>
       <div class="column">
         <div class="workouts" v-for="(p, i) in workouts" :key="p.src">
           <exercise-tracker :workouts="p" @remove="remove(p, i)" />
         </div>
       </div>
-      <div class="column">
-       <div>
-                <workoutedit :new-workout="newWorkout" @add="add()"/>
-            </div>
-      </div>
+     
     </div>
     
   </div>

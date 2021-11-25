@@ -153,14 +153,23 @@ export default {
         user_handle: Session.user.handle
       };
 
-      console.log(newProfileData);
+      
       Session.AddProfileData(newProfileData);
-      this.profile = newProfileData;
+    
+    
     },
  
   },
-   async beforeMount(){
-    this.profile = Session.GetProfileData();
+    async beforeMount(){
+       let newProfileData = {
+        src: this.profile.src,
+        weight: this.profile.weight,
+        description: this.profile.description,
+        user_handle: Session.user.handle
+      };
+        console.log(Session.AddProfileData(newProfileData));
+
+    
  },
 };
 </script>

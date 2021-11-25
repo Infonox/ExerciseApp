@@ -124,9 +124,7 @@ export default {
       mounted() {
    Session.CheckForSameUsers= false;
 },
-updated() {
-   console.log(this.$route)
-}
+
 }
                
 

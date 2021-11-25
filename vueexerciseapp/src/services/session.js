@@ -1,5 +1,5 @@
 import router from "../router";
-import {  AddData, Get, GetAll2 } from "./profiles";
+import { Get, GetAll2 } from "./profiles";
 import { Add, GetAll, Login } from "./users";
 import { NotificationProgrammatic } from "@oruga-ui/oruga-next/dist/esm/notification";
 
@@ -19,16 +19,23 @@ const session = {
     CheckForSameUsers: false,
     handle: null,
 
-    async AddProfileData(data){
-        const response = await AddData(data);
+    async AddProfileData(){
+        const response = await GetAll2();
+        console.log(response);
         const user = await GetAll()
+        console.log(user);
         for(var i of user){
 
-            if(i.handle == data.handle)
-            this.handle = i.handle;
+            if(i.handle == response.user_handle)
+            {
+           
+            this.checkData = true;
+            console.log(this.checkData);
+         
+            }
 
         }
-        this.user = response.user;
+        
 
     },
     async GetProfileData(){
