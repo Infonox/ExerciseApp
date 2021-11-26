@@ -33,9 +33,10 @@
 .buttons{
     text-align: center;
   font-family: "Amatic SC", cursive;
-  font-family: "Roboto Condensed", sans-serif;
+ 
   font-weight: bold;
 
+  font-size:20px;
 
 }
 

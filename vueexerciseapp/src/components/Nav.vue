@@ -99,6 +99,9 @@
         </div>
 
         <div class="navbar-end"> <login-badge /></div>
+        <div class="navbar-end"> <logout /></div>
+        
+
       </div>
     </div>
     
@@ -107,6 +110,8 @@
 
 <script>
 import LoginBadge from "./LoginBadge";
+import Logout from "./Logout.vue";
+
 export default {
   data() {
     return {
@@ -128,6 +133,8 @@ export default {
 
   components: {
     LoginBadge,
+    Logout,
+
   },
 };
 </script>

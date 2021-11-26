@@ -1,11 +1,13 @@
 <template>
     <div class="buttons" v-if="!Session.user">
-          <router-link class="navbar-item  button is-light" to="/signup" >
+          <router-link class=" button is-light" to="/signup" >
         Signup
       </router-link>
-          <a class="button is-light" @click="login">
+      <router-link class="button is-light" to="/login" @click="login">
+     
             Log in
-          </a>
+  
+        </router-link>
     </div>
     <div v-else class="title" style="border-style:double; font-size: 28px;">
         Hello {{name}} 
@@ -24,7 +26,14 @@ export default {
         login(){
             this.$router.push('/login');
             //this.Session.Login();
+        },
+        logout(){
+           
+            this.$forceUpdate();
+           
         }
+
+        
     },
     computed:{
         name(){
