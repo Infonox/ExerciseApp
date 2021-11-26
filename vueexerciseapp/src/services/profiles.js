@@ -1,8 +1,12 @@
 import { api } from "./myFetch";
 
 
+export function Update(profiles_id, profiles) {
+    return api('profiles/' + profiles_id, profiles, 'PATCH');
+}
 
-export function GetAll2() {
+
+export function getAll2() {
     return api('profiles');
  }
 
@@ -14,6 +18,3 @@ export function AddData(profile) {
         return api('profiles', profile);
     }
 
-export function Update(profiles_id, profiles) {
-   return {profiles_id, profiles};
-}

@@ -50,7 +50,7 @@ const list = [
         isPublic: true,
     },
     {
-        src: "https://scontent-lga3-2.xx.fbcdn.net/v/t1.6435-9/p180x540/242759506_10102663165018030_5506732176336636339_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=730e14&_nc_ohc=LJFWaOTJXvUAX-skiU3&_nc_ht=scontent-lga3-2.xx&oh=e6a03799ccf969c3b3fe62a7b266b8b9&oe=618C38F8https://upload.wikimedia.org/wikipedia/commons/c/cb/BagGloves.JPG",
+        src: "https://upload.wikimedia.org/wikipedia/commons/3/38/Mike_Tyson_vs._Pinklon_Thomas_advertisement.jpg",
         alt: "Tyson's gloves",
         caption: "My favorite pair of boxing gloves!",
         time: Date(),

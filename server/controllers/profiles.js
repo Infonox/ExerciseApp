@@ -9,8 +9,11 @@ const app = express.Router();
 app
 .get("/", (req, res, next)=>{
 
-    models.getAll2().then(x=>res.send(x)).catch(next);
-     
+    models.getAll2().then(profile=>{
+        res.send(profile);
+    })
+    .catch(next);
+
  
  })
 .get("/:id", (req, res, next)=>{
@@ -21,8 +24,8 @@ app
 })
 
 
-.patch("/:id", (req, res, next) =>{
-    models   .Update(req.params.id, req.body)
+.patch("/:profiles_id", (req, res, next) =>{
+    models   .Update(req.params.profiles_id, req.body)
             .then( x=> res.send(x) )
             .catch(next) 
 })

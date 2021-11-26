@@ -1,7 +1,7 @@
 <template>
   <div class="section">
       
-      <section>
+     
       <div class="columns">
 
   
@@ -27,9 +27,9 @@
            <h1 class="title"> New post preview: </h1>
            <post :post="newPost" />
         </div>
-      </div>
-      </section>
-      <div class="section" style="width:100ex;margin:auto;">
+      
+      
+      
      
      <div class>
        <div class="post column" style="border-style:double;alignment:center;" v-for=" (p, i) in posts" :key="p.src">
@@ -81,7 +81,7 @@ export default {
             if(response){
                 this.posts.unshift(response);
                 
-                session.user.pic = this.posts.pic;
+           
                 this.newPost = newPost();
             }
         }

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <form class="card" @submit.prevent="addProfileData">
+    <form class="card" @submit.prevent="editProfile">
       <div class="card-content">
         <div class="content">
           <div class="field">
@@ -10,7 +10,8 @@
                 class="input"
                 type="url"
                 placeholder="Input a URL to profile picture"
-                v-model="profile.src"
+                v-model="profiledata.src"
+                
               />
             </div>
           </div>
@@ -21,7 +22,8 @@
               <textarea
                 class="textarea"
                 placeholder="Put your description here!"
-                v-model="profile.description"
+                v-model="profiledata.description"
+           
               ></textarea>
             </div>
           </div>
@@ -32,7 +34,8 @@
                 class="input"
                 type="number"
                 placeholder="How old are you?"
-                v-model="profile.age"
+                v-model="profiledata.age"
+             
               />
             </div>
           </div>
@@ -43,7 +46,8 @@
                 class="input"
                 type="number"
                 placeholder="How much do you weigh?"
-                v-model="profile.weight"
+                v-model="profiledata.weight"
+              
               />
             </div>
           </div>
@@ -54,7 +58,8 @@
                 <input
                   type="radio"
                   name="question"
-                  v-model="profile.isPublic"
+                  v-model="profiledata.isPublic"
+            
                   :value="true"
                 />
                 Public
@@ -63,7 +68,8 @@
                 <input
                   type="radio"
                   name="question"
-                  v-model="profile.isPublic"
+
+                   v-model="profiledata.isPublic"
                   :value="false"
                 />
                 Private
@@ -86,8 +92,8 @@
       <div class="card notification" style="background-color: beige">
         <div class="card-content">
           <div class="media-content">
-            <div class="title is-4" style="size: 100px">{{ fullname }}</div>
-            <p class="subtitle is-6">{{ profile.user_handle }}</p>
+            <div class="title is-4" style="size: 100px"></div>
+            <p class="subtitle is-6"></p>
           </div>
         </div>
 
@@ -111,25 +117,35 @@
             <container>
               <span style="font-size: 80px">User Image:</span>
               <br />
+
+              <img :src="`  ${profiledata.src}`">
+
+           
+
+            
+              
               <br />
 
-              <img class="is-rounded" :src="`  ${this.profile.src} `" />
+              <img class="is-rounded"  />
             </container>
           </div>
           <div class="column notification is-danger has-text-black">
             <span style="font-size: 80px">Age:</span>
+            {{profiledata.age}}
             <br />
-            <span style="font-size: 45px">{{ this.profile.age }}</span>
+            <span style="font-size: 45px"></span>
           </div>
           <div class="column notification is-primary has-text-black">
             <span style="font-size: 80px">Weight:</span>
+            {{profiledata.weight}}
             <br />
-            <span style="font-size: 45px">{{ this.profile.weight }}</span>
+            <span style="font-size: 45px"></span>
           </div>
           <div class="column notification is-warning has-text-black">
             <span style="font-size: 80px">Description</span>
+              {{profiledata.description}}
             <br />
-            {{ this.profile.description }}
+       
           </div>
         </div>
       </div>
@@ -138,36 +154,41 @@
 </template>
 
 <script>
+import {Update} from "../services/profiles";
 import Session from "../services/session";
+
 
 export default {
   data: () => ({
-    profile: { src: "", weight: "", description: "", age: "", user_handle: "" },
-  }),
-  methods: {
-    addProfileData() {
-      let newProfileData = {
-        src: this.profile.src,
-        weight: this.profile.weight,
-        description: this.profile.description,
-        user_handle: Session.user.handle
-      };
 
-      
-      Session.AddProfileData(newProfileData);
+    profiledata:[{_id: null,src: null, age:null, weight:null, description:null,user_handle:null,isPublic:null}],
     
+
+   
+  
+  }),
+  methods:{
+    async editProfile(){
+     const response = await Update(this.profiledata._id, this.profiledata)
+     console.log(response);
+
+  
+   
     
-    },
- 
+    }
+
   },
-    async beforeMount(){
-       let newProfileData = {
-        src: this.profile.src,
-        weight: this.profile.weight,
-        description: this.profile.description,
-        user_handle: Session.user.handle
-      };
-        console.log(Session.AddProfileData(newProfileData));
+  
+      async mounted(){
+      
+      
+     const response = await Session.AddProfileData(Session.user);
+       console.log(response);
+       this.profiledata = response;
+      
+      
+       
+  
 
     
  },

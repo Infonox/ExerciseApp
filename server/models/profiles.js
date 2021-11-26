@@ -10,7 +10,7 @@ module.exports.collection = collection;
 
 const list = [
     {
-        src: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Arnold_Schwarzenegger_%2833730956438%29.jpg",
+        src: "https://i.postimg.cc/7PNJcMCR/Henry-MPicture.png",
         age: 25,
         weight: '250lbs',
         description: "Just a programmer who likes to workout!",
@@ -26,11 +26,11 @@ const list = [
         isPublic: true,
     },
     {
-        src: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Arnold_Schwarzenegger_%2833730956438%29.jpg",
+        src: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Mike_Tyson_Portrait.jpg",
         age: 58,
         weight: '230lbs',
         description:'Im the best boxer ever',
-        user_handle: "@yummyears",
+        user_handle: "@boxer",
         isPublic: true,
     },
 ];
@@ -57,8 +57,8 @@ module.exports.AddData = async function AddData(profile) {
     return { ...profile};
 }
 
-module.exports.getAll2 = function GetAll() {
-    return collection.aggregate(addOwnerPipeline).toArray();
+module.exports.getAll2 = function getAll2() {
+    return collection.find().toArray();
 }
 
 
@@ -70,6 +70,7 @@ module.exports.Update = async function Update(profiles_id, profile) {
         { $set: profile },
         { returnDocument: 'after' }
     );
+    console.log({ profiles_id, results });
     return results.value;
     }
 
