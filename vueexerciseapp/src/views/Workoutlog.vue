@@ -5,8 +5,7 @@
        <div>
                 <workoutedit :new-workout="newWorkout" @add="add()"/>
             </div>
-      </div>
-      <div class="column">
+      </div><div class="column">
         <div class="workouts" v-for="(p, i) in workouts" :key="p.src">
           <exercise-tracker :workouts="p" @remove="remove(p, i)" />
         </div>

@@ -74,9 +74,7 @@ export default {
    mounted() {
    Session.regConfirm = false;
 },
-updated() {
-   console.log(this.$route)
-}
+
 }
 </script>
 
