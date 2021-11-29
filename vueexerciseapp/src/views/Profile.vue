@@ -161,7 +161,7 @@ import Session from "../services/session";
 export default {
   data: () => ({
 
-    profiledata:[{_id: null,src: null, age:null, weight:null, description:null,user_handle:null,isPublic:null}],
+    profiledata:{src: null, age:null, weight:null, description:null,user_handle:null,isPublic:null},
     
 
    
@@ -186,8 +186,9 @@ export default {
       
       
      const response = await Session.GetProfileData(Session.user);
+     console.log(response);
    
-       this.profiledata = response;
+    this.profiledata = response;
       
       
        

@@ -65,6 +65,8 @@ module.exports.getAll2 = function getAll2() {
 module.exports.Get = function Get(profiles_id) { return collection.findOne({ _id: new ObjectId(profiles_id) }); }
 
 module.exports.Update = async function Update(profiles_id, profile) {
+    delete profile._id;
+    console.log(profile);
     const results = await collection.findOneAndUpdate(
         { _id: new ObjectId(profiles_id) },
         { $set: profile },

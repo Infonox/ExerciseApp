@@ -38,6 +38,9 @@ app
 
 .use((err,req,res,next) =>{
     console.error(err);
+    if(err.code < 400 || err.code > 600){
+        err.code = 500;
+    }
     res.status(err.code || 500).send(err);
 })
 
