@@ -1,5 +1,5 @@
 import router from "../router";
-import {  getAll2 } from "./profiles";
+import { AddData, getAll2 } from "./profiles";
 import { Add, GetAll, Login } from "./users";
 import { NotificationProgrammatic } from "@oruga-ui/oruga-next/dist/esm/notification";
 
@@ -23,18 +23,18 @@ const session = {
         try {
             let listofprofiles = await (getAll2());
             this.profile = listofprofiles;
-            
-         
-let userprofiledata = this.profile.find(o => o.user_handle === user.handle);
-this.profile = userprofiledata;
-return this.profile;
+
+
+            let userprofiledata = this.profile.find(o => o.user_handle === user.handle);
+            this.profile = userprofiledata;
+            return this.profile;
 
 
 
-          
-      
 
-            
+
+
+
         } catch (error) {
             this.messages.push({ text: error.msg, type: 'warning' })
             NotificationProgrammatic.open({
@@ -49,8 +49,8 @@ return this.profile;
 
 
     },
- 
-     
+
+
     async Login(handle, password) {
 
         try {
@@ -119,9 +119,36 @@ return this.profile;
         }
 
 
+    },
+    async AddNewProfile(profile) {
 
+
+        try {
+            const response = await AddData(profile);
+
+            console.log(response);
+
+           
+
+        } catch (error) {
+            this.messages.push({ text: error.msg, type: 'warning' })
+            NotificationProgrammatic.open({
+                duration: 5000,
+                message: error.msg,
+                variant: 'danger',
+                type: 'danger',
+                closable: true
+            })
+            this.Error(error);
+
+        }
 
     },
+
+
+
+
+
     Error(error) {
         console.error(error);
         const msg = error.msg ?? error;

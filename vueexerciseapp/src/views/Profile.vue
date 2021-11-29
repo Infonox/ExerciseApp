@@ -47,6 +47,7 @@
                 type="number"
                 placeholder="How much do you weigh?"
                 v-model="profiledata.weight"
+                hidden
               
               />
             </div>

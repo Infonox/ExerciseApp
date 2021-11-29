@@ -81,7 +81,57 @@
          </div>
            <div v-if="Session.CheckForSameUsers" style="font-family: Garamond, serif; font-size:35px; font-weight:bold;">
       {{Session.NoSameUsers}}
+      <hr>
+      <div>Create a profile below!</div><br>
   </div>
+   <div class="field">
+          <label class="label">Picture</label>
+          <div class="control">
+            <input
+              class="input"
+              name="picture"
+              type="url"
+              placeholder="Enter a web url for a picture!"
+              v-model="ProfileData.picture"
+            />
+          </div>
+        </div>
+         <div class="field">
+          <label class="label">Description</label>
+          <div class="control">
+            <input
+              class="input"
+              name="description"
+              type="text"
+              placeholder="Enter a description for your profile!"
+              v-model="ProfileData.description"
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Age</label>
+          <div class="control">
+            <input
+              class="input"
+              name="age"
+              type="text"
+              placeholder="Enter your age!"
+              v-model="ProfileData.age"
+            />
+          </div>
+        </div>
+          <div class="field">
+          <label class="label">Weight</label>
+          <div class="control">
+            <input
+              class="input"
+              name="weight"
+              type="text"
+              placeholder="Enter your weight"
+              v-model="ProfileData.weight"
+            />
+          </div>
+        </div>
         <div class="control">
           <button class="button is-link title" style="height: 50px" action="submit">
             Create Account
@@ -104,7 +154,8 @@ export default {
     data: ()=>({
         User: {firstName:'', lastName: '', handle:'', password:'', isAdmin:'', emails:[], following:[]},
         email:'',
-        Session
+        Session,
+        ProfileData: {user_handle:'',picture:'', description:'', age:'', weight:''}
        
     }),
     methods: {
@@ -115,8 +166,13 @@ export default {
             firstName: this.User.firstName, lastName: this.User.lastName, handle: this.User.handle, password: this.User.password, isAdmin: false, emails: this.User.emails, following: this.User.following
           
           }
+          let profile = {
+            user_handle: this.User.handle, picture: this.ProfileData.picture, description:this.ProfileData.description, age: this.ProfileData.age, weight: this.ProfileData.weight
+          }
           console.log(newUser);
+          console.log(profile);
           this.Session.Register(newUser);
+          this.Session.AddNewProfile(profile);
          
 
         }
