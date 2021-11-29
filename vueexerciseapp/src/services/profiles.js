@@ -2,7 +2,7 @@ import { api } from "./myFetch";
 
 
 export function Update(profiles_id, profiles) {
-    return api('profiles/' + profiles_id, profiles, 'PATCH');
+    return {profiles_id,profiles};
 }
 
 

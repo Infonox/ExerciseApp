@@ -19,7 +19,7 @@ const session = {
     CheckForSameUsers: false,
     handle: null,
 
-    async AddProfileData(user) {
+    async GetProfileData(user) {
         try {
             let listofprofiles = await (getAll2());
             this.profile = listofprofiles;
@@ -49,12 +49,7 @@ return this.profile;
 
 
     },
-     GetProfileData() {
-
-     return this.profile;
-      
-
-    },
+ 
      
     async Login(handle, password) {
 

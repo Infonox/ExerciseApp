@@ -171,6 +171,9 @@ export default {
     async editProfile(){
      const response = await Update(this.profiledata._id, this.profiledata)
      console.log(response);
+    
+       
+    
 
   
    
@@ -182,8 +185,8 @@ export default {
       async mounted(){
       
       
-     const response = await Session.AddProfileData(Session.user);
-       console.log(response);
+     const response = await Session.GetProfileData(Session.user);
+   
        this.profiledata = response;
       
       
