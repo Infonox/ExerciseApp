@@ -11,7 +11,6 @@
                 type="url"
                 placeholder="Input a URL to profile picture"
                 v-model="profiledata.src"
-                
               />
             </div>
           </div>
@@ -23,7 +22,6 @@
                 class="textarea"
                 placeholder="Put your description here!"
                 v-model="profiledata.description"
-           
               ></textarea>
             </div>
           </div>
@@ -35,7 +33,6 @@
                 type="number"
                 placeholder="How old are you?"
                 v-model="profiledata.age"
-             
               />
             </div>
           </div>
@@ -48,7 +45,6 @@
                 placeholder="How much do you weigh?"
                 v-model="profiledata.weight"
                 hidden
-              
               />
             </div>
           </div>
@@ -60,7 +56,6 @@
                   type="radio"
                   name="question"
                   v-model="profiledata.isPublic"
-            
                   :value="true"
                 />
                 Public
@@ -69,8 +64,7 @@
                 <input
                   type="radio"
                   name="question"
-
-                   v-model="profiledata.isPublic"
+                  v-model="profiledata.isPublic"
                   :value="false"
                 />
                 Private
@@ -119,34 +113,29 @@
               <span style="font-size: 80px">User Image:</span>
               <br />
 
-              <img :src="`  ${profiledata.src}`">
+              <img :src="`  ${profiledata.src}`" />
 
-           
-
-            
-              
               <br />
 
-              <img class="is-rounded"  />
+              <img class="is-rounded" />
             </container>
           </div>
           <div class="column notification is-danger has-text-black">
             <span style="font-size: 80px">Age:</span>
-            {{profiledata.age}}
+            {{ profiledata.age }}
             <br />
             <span style="font-size: 45px"></span>
           </div>
           <div class="column notification is-primary has-text-black">
             <span style="font-size: 80px">Weight:</span>
-            {{profiledata.weight}}
+            {{ profiledata.weight }}
             <br />
             <span style="font-size: 45px"></span>
           </div>
           <div class="column notification is-warning has-text-black">
             <span style="font-size: 80px">Description</span>
-              {{profiledata.description}}
+            {{ profiledata.description }}
             <br />
-       
           </div>
         </div>
       </div>
@@ -155,48 +144,33 @@
 </template>
 
 <script>
-import {Update} from "../services/profiles";
+import { Update } from "../services/profiles";
 import Session from "../services/session";
-
 
 export default {
   data: () => ({
-
-    profiledata:{src: null, age:null, weight:null, description:null,user_handle:null,isPublic:null},
-    
-
-   
-  
+    profiledata: {
+      src: null,
+      age: null,
+      weight: null,
+      description: null,
+      user_handle: null,
+      isPublic: null,
+    },
   }),
-  methods:{
-    async editProfile(){
-     const response = await Update(this.profiledata._id, this.profiledata)
-     console.log(response);
-    
-       
-    
-
-  
-   
-    
-    }
-
+  methods: {
+    async editProfile() {
+      const response = await Update(this.profiledata._id, this.profiledata);
+      console.log(response);
+    },
   },
-  
-      async mounted(){
-      
-      
-     const response = await Session.GetProfileData(Session.user);
-     console.log(response);
-   
-    this.profiledata = response;
-      
-      
-       
-  
 
-    
- },
+  async mounted() {
+    const response = await Session.GetProfileData(Session.user);
+    console.log(response);
+
+    this.profiledata = response;
+  },
 };
 </script>
 

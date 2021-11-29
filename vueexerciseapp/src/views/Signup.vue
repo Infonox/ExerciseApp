@@ -12,7 +12,7 @@
     </section>
     <br />
 
-    <form class="container"  @submit.prevent="register()">
+    <form class="container" @submit.prevent="register()">
       <div class="column">
         <div class="field">
           <label class="label">Email Address:</label>
@@ -26,7 +26,6 @@
               required
             />
           </div>
-
         </div>
         <div class="field">
           <label class="label">First Name</label>
@@ -40,7 +39,6 @@
               required
             />
           </div>
-
         </div>
         <div class="field">
           <label class="label">Last Name</label>
@@ -78,112 +76,135 @@
             />
           </div>
         </div>
-         </div>
-           <div v-if="Session.CheckForSameUsers" style="font-family: Garamond, serif; font-size:35px; font-weight:bold;">
-      {{Session.NoSameUsers}}
+      </div>
+      <div
+        v-if="Session.CheckForSameUsers"
+        style="font-family: Garamond, serif; font-size: 35px; font-weight: bold"
+      >
+        {{ Session.NoSameUsers }}
+    
+      </div>
       <hr>
-      <div>Create a profile below!</div><br>
-  </div>
-   <div class="field">
-          <label class="label">Picture</label>
-          <div class="control">
-            <input
-              class="input"
-              name="picture"
-              type="url"
-              placeholder="Enter a web url for a picture!"
-              v-model="ProfileData.picture"
-            />
-          </div>
-        </div>
-         <div class="field">
-          <label class="label">Description</label>
-          <div class="control">
-            <input
-              class="input"
-              name="description"
-              type="text"
-              placeholder="Enter a description for your profile!"
-              v-model="ProfileData.description"
-            />
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Age</label>
-          <div class="control">
-            <input
-              class="input"
-              name="age"
-              type="text"
-              placeholder="Enter your age!"
-              v-model="ProfileData.age"
-            />
-          </div>
-        </div>
-          <div class="field">
-          <label class="label">Weight</label>
-          <div class="control">
-            <input
-              class="input"
-              name="weight"
-              type="text"
-              placeholder="Enter your weight"
-              v-model="ProfileData.weight"
-            />
-          </div>
-        </div>
+      <div style="font-family: Garamond, serif; font-size: 35px; font-weight: bold"> Create a profile below! </div>
+      <div class="field">
+        <label class="label">Picture</label>
         <div class="control">
-          <button class="button is-link title" style="height: 50px" action="submit">
-            Create Account
-          </button>
+          <input
+            class="input"
+            name="picture"
+            type="url"
+            placeholder="Enter a web url for a picture!"
+            v-model="ProfileData.picture"
+          />
         </div>
-       
+      </div>
+      <div class="field">
+        <label class="label">Description</label>
+        <div class="control">
+          <input
+            class="input"
+            name="description"
+            type="text"
+            placeholder="Enter a description for your profile!"
+            v-model="ProfileData.description"
+          />
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Age</label>
+        <div class="control">
+          <input
+            class="input"
+            name="age"
+            type="text"
+            placeholder="Enter your age!"
+            v-model="ProfileData.age"
+          />
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Weight</label>
+        <div class="control">
+          <input
+            class="input"
+            name="weight"
+            type="text"
+            placeholder="Enter your weight"
+            v-model="ProfileData.weight"
+          />
+        </div>
+      </div>
+      <div class="control">
+        <button
+          class="button is-link title"
+          style="height: 50px"
+          action="submit"
+        >
+          Create Account
+        </button>
+      </div>
     </form>
- 
-</div>
+  </div>
 </template>
 
 <script>
-
-
-
-import Session from "../services/session"
-
+import Session from "../services/session";
 
 export default {
-    data: ()=>({
-        User: {firstName:'', lastName: '', handle:'', password:'', isAdmin:'', emails:[], following:[]},
-        email:'',
-        Session,
-        ProfileData: {user_handle:'',picture:'', description:'', age:'', weight:''}
-       
-    }),
-    methods: {
-       register(){
-         this.User.emails.push(this.email);
-         this.User.following.push({handle:'@bodybuilder', isApproved: true }, { handle: '@boxer', isApproved: true },{ handle: '@HenryM', isApproved: true });
-          let newUser ={
-            firstName: this.User.firstName, lastName: this.User.lastName, handle: this.User.handle, password: this.User.password, isAdmin: false, emails: this.User.emails, following: this.User.following
-          
-          }
-          let profile = {
-            user_handle: this.User.handle, picture: this.ProfileData.picture, description:this.ProfileData.description, age: this.ProfileData.age, weight: this.ProfileData.weight
-          }
-          console.log(newUser);
-          console.log(profile);
-          this.Session.Register(newUser);
-          this.Session.AddNewProfile(profile);
-         
-
-        }
+  data: () => ({
+    User: {
+      firstName: "",
+      lastName: "",
+      handle: "",
+      password: "",
+      isAdmin: "",
+      emails: [],
+      following: [],
     },
-      mounted() {
-   Session.CheckForSameUsers= false;
-},
-
-}
-               
-
+    email: "",
+    Session,
+    ProfileData: {
+      user_handle: "",
+      picture: "",
+      description: "",
+      age: "",
+      weight: "",
+    },
+  }),
+  methods: {
+    register() {
+      this.User.emails.push(this.email);
+      this.User.following.push(
+        { handle: "@bodybuilder", isApproved: true },
+        { handle: "@boxer", isApproved: true },
+        { handle: "@HenryM", isApproved: true }
+      );
+      let newUser = {
+        firstName: this.User.firstName,
+        lastName: this.User.lastName,
+        handle: this.User.handle,
+        password: this.User.password,
+        isAdmin: false,
+        emails: this.User.emails,
+        following: this.User.following,
+      };
+      let profile = {
+        user_handle: this.User.handle,
+        picture: this.ProfileData.picture,
+        description: this.ProfileData.description,
+        age: this.ProfileData.age,
+        weight: this.ProfileData.weight,
+      };
+      console.log(newUser);
+      console.log(profile);
+      this.Session.Register(newUser);
+      this.Session.AddNewProfile(profile);
+    },
+  },
+  mounted() {
+    Session.CheckForSameUsers = false;
+  },
+};
 </script>
 
 <style>
