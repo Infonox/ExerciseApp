@@ -14,7 +14,7 @@
 
       <div class>
         <div
-          class="post column"
+          class="post"
           style="border-style: double; alignment: center"
           v-for="(p, i) in posts"
           :key="p.src"
@@ -73,5 +73,10 @@ export default {
 <style>
 .card {
   margin-bottom: 10px;
+  
 }
+@import url(https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Amatic+SC&family=Roboto+Condensed:wght@300&display=swap);
+@import url("../assets/styles.css");
 </style>
