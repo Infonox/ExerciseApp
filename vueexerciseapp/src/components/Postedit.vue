@@ -21,6 +21,15 @@
                         <textarea class="textarea" placeholder="Some text to explain this picture" v-model="post.caption"></textarea>
                     </div>
                 </div>
+                    <div class="field">
+                    <label class="label">Tag A Friend</label>
+                    <div class="control">
+                         <o-autocomplete rounded expanded v-model="name" :data="filteredDataArray" placeholder="Enter @ to search for followers" icon="search" clearable @select="option => selected = option" >
+                             <template v-slot:empty>No results found</template>
+                         </o-autocomplete>
+                    </div>
+                </div>
+
 
                 <div class="field">
                     <div class="control">
@@ -46,19 +55,53 @@
 </template>
 
 <script>
+import session from "../services/session";
 export default {
+
     props: {
         newPost: Object
     },
     data(){
         return {
-            post: this.newPost
+          
+            data: [],
+           name: '',
+           selected: null,
+           post: this.newPost,
+
         }
     },
     watch: {
         newPost(){
             this.post = this.newPost;
+            this.data;
+         
+            
         }
+    
+    
+    },
+    computed: {
+          filteredDataArray() {
+           return this.data.filter(option => {
+          return (
+            option
+              .toString()
+              .toLowerCase()
+              .indexOf(this.name.toLowerCase()) >= 0
+          )
+        })
+      }
+        
+    },
+    async mounted() {
+        let following = await session.GetUserFollowings(session.user);
+       console.log(following);
+       this.data = following;
+
+        
+
+
     }
 }
 </script>

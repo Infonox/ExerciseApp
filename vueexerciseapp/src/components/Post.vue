@@ -23,6 +23,7 @@
 
     <div class="content">
       {{post.caption}}
+     
       <br>
       <time datetime="post.time">{{prettyDate}}</time>
     </div>

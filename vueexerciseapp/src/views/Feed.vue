@@ -35,6 +35,7 @@ const newPost = () => ({
   user: session.user,
   user_handle: session.user.handle,
   pic: session.user.pic,
+
 });
 export default {
   components: {

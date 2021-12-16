@@ -109,7 +109,7 @@
 </template>
 
 <script>
-import LoginBadge from "./LoginBadge";
+import LoginBadge from "./LoginBadge.vue";
 import Logout from "./Logout.vue";
 
 export default {

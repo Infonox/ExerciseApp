@@ -9,6 +9,7 @@ import { NotificationProgrammatic } from "@oruga-ui/oruga-next/dist/esm/notifica
 
 
 const session = {
+    userFollowers:[],
     checkData: false,
     profile: null,
     user: null,
@@ -18,7 +19,30 @@ const session = {
     NoSameUsers: "Sorry, already a user with that handle, please enter a different one!",
     CheckForSameUsers: false,
     handle: null,
+    async GetUserFollowings(user){
+        try{
+           
+          
+           
+            let result = await user.following.map(a => a.handle); 
+            
+        
+            return result;
 
+        }
+        catch(error){
+            this.messages.push({ text: error.msg, type: 'warning' })
+            NotificationProgrammatic.open({
+                duration: 5000,
+                message: error.msg,
+                variant: 'danger',
+                type: 'danger',
+                closable: true
+            })
+            this.Error(error);
+
+        }
+    },
     async GetProfileData(user) {
         try {
             let listofprofiles = await (getAll2());
